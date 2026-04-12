@@ -1,0 +1,182 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="hero-copy reveal-slide">
+    <p class="eyebrow">{{ site.Params.role }}</p>
+    <h1 class="hero-name">{{ site.Params.name }}</h1>
+    <p class="tagline">{{ site.Params.tagline }}</p>
+    <div class="hero-facts">
+      <span class="availability-pill">{{ site.Params.availability }}</span>
+      <span>{{ site.Params.location }}</span>
+    </div>
+  </div>
+</section>
+
+<section class="skills-ribbon" aria-label="Key skills">
+  <div class="skills-marquee">
+    <div class="skills-track">
+      <div class="skills-group">
+        <span>LLM Engineering</span>
+        <span>•</span>
+        <span>Agentic AI</span>
+        <span>•</span>
+        <span>RAG</span>
+        <span>•</span>
+        <span>Workflow Automation</span>
+        <span>•</span>
+        <span>MCP</span>
+        <span>•</span>
+        <span>Prompt Engineering</span>
+        <span>•</span>
+        <span>Product Prototyping</span>
+        <span>•</span>
+        <span>AI Tooling</span>
+        <span>•</span>
+        <span>Systems Design</span>
+        <span>•</span>
+        <span>ERP</span>
+        <span>•</span>
+        <span>Data Engineering</span>
+        <span>•</span>
+        <span>Support Workflows</span>
+        <span>•</span>
+        <span>API Integrations</span>
+        <span>•</span>
+        <span>Business Systems</span>
+        <span>•</span>
+      </div>
+      <div class="skills-group" aria-hidden="true">
+        <span>LLM Engineering</span>
+        <span>•</span>
+        <span>Agentic AI</span>
+        <span>•</span>
+        <span>RAG</span>
+        <span>•</span>
+        <span>Workflow Automation</span>
+        <span>•</span>
+        <span>MCP</span>
+        <span>•</span>
+        <span>Prompt Engineering</span>
+        <span>•</span>
+        <span>Product Prototyping</span>
+        <span>•</span>
+        <span>AI Tooling</span>
+        <span>•</span>
+        <span>Systems Design</span>
+        <span>•</span>
+        <span>ERP</span>
+        <span>•</span>
+        <span>Data Engineering</span>
+        <span>•</span>
+        <span>Support Workflows</span>
+        <span>•</span>
+        <span>API Integrations</span>
+        <span>•</span>
+        <span>Business Systems</span>
+        <span>•</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="section">
+  <div class="section-head section-head-projects">
+    <p class="section-kicker">Selected work</p>
+    <h2>Projects built in the transition, not around it.</h2>
+  </div>
+  <div class="project-grid">
+    {{ range $index, $project := site.Data.projects.projects }}
+    <a class="project-card" href="/projects/{{ $project.slug }}/">
+      <div class="project-card-layout">
+        <div class="project-card-left">
+          <div class="project-meta">
+            <span class="project-number">{{ printf "%02d" (add $index 1) }}</span>
+            {{ if $project.status }}<span class="project-status{{ if eq $project.status "WORK IN PROGRESS" }} project-status-wip{{ end }}">{{ $project.status }}</span>{{ end }}
+          </div>
+          <p class="project-summary">{{ $project.summary }}</p>
+          <div class="project-stack">
+            {{ range $project.stack }}
+            <span>{{ . }}</span>
+            {{ end }}
+          </div>
+        </div>
+        <div class="project-divider" aria-hidden="true"></div>
+        <div class="project-card-right">
+          <span class="project-name">{{ $project.name }}</span>
+        </div>
+      </div>
+    </a>
+    {{ end }}
+  </div>
+</section>
+
+<section id="about" class="section about-section">
+  <div class="section-head">
+    <p class="section-kicker">About</p>
+    <h2>Grounded in systems. Built in collaboration.</h2>
+  </div>
+  <div class="about-layout">
+    <div class="about-copy">
+      <p>My background is in SAP Business One, business systems, reporting, and data workflows, where I spent years turning operational needs into working solutions for users and stakeholders.</p>
+      <p>That work taught me how to think in systems, not features. I learned how processes break, where teams get blocked, and what useful software actually has to do once it leaves the whiteboard.</p>
+      <p>More recently, I have been building AI-assisted products and experimenting with agent-driven systems, with a focus on making AI genuinely useful in real-world environments.</p>
+      <p>IM x AI reflects how I work now: human judgment, direction, and taste, strengthened by serious collaboration with AI during research, prototyping, implementation, and iteration.</p>
+      <p>I am most interested in work that sits close to infrastructure, users, and operational reality: the layer where product thinking, technical depth, and practical automation meet.</p>
+    </div>
+    <div class="timeline-group">
+      <div class="timeline-section">
+        <p class="section-kicker">Experience</p>
+        <div class="timeline-list">
+          <div class="timeline-item">
+            <div class="timeline-main">
+              <h3>Milner Browne</h3>
+              <p>SAP Business One Consultant</p>
+            </div>
+            <span class="timeline-date">2018 - Now</span>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-main">
+              <h3>Groupon</h3>
+              <p>Customer Support Representative</p>
+            </div>
+            <span class="timeline-date">2014 - 2016</span>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-section">
+        <p class="section-kicker">Hackathons</p>
+        <div class="timeline-list">
+          <div class="timeline-item">
+            <div class="timeline-main">
+              <h3>Notion MCP Hackathon</h3>
+            </div>
+            <span class="timeline-date">2026</span>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-section">
+        <p class="section-kicker">Certification</p>
+        <div class="timeline-list">
+          <div class="timeline-item">
+            <div class="timeline-main">
+              <h3>SAP Certified Application Associate</h3>
+            </div>
+            <span class="timeline-date">2025</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section section-narrow contact-block">
+  <div class="section-head">
+    <h2>Open to the right conversation.</h2>
+  </div>
+  <p>If you are hiring for AI systems, agent tooling, or technical product roles, I would be glad to connect.</p>
+  <div class="contact-links">
+    <a href="mailto:{{ site.Params.email }}">Email</a>
+    <a href="{{ site.Params.github }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href="{{ site.Params.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </div>
+</section>
+{{ end }}

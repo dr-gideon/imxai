@@ -1,0 +1,59 @@
+projects:
+  - slug: culld
+    name: CULLD
+    status: WORK IN PROGRESS
+    summary: Agent-native recruiting platform designed to help AI systems search, evaluate, and surface talent.
+    impact: Active build focused on AI-era hiring workflows, structured profiles, and recruiter tooling.
+    stack:
+      - MCP
+      - AI Matching
+      - Verification Flows
+      - Role-based Access
+    body: |
+      Culld is a recruiting platform built for agent-native workflows. It is designed around the idea that AI systems should be able to search structured talent data, evaluate fit, and support hiring workflows in a more direct way than traditional professional networks.
+
+      The project combines profile ingestion, filtering, verification, and matching into a system intended for recruiters, candidates, and companies.
+  - slug: argus
+    name: ARGUS
+    status: WORK IN PROGRESS
+    summary: RAG-based support assistant for business systems knowledge, built to learn retrieval pipelines and grounded AI responses.
+    impact: Working retrieval and answer-generation pipeline with curated knowledge and citation-based responses.
+    stack:
+      - Python
+      - FastAPI
+      - Postgres
+      - pgvector
+      - RAG
+    body: |
+      ARGUS is a retrieval-augmented support assistant designed around real-world troubleshooting and knowledge retrieval. The project focuses on building a grounded support workflow using curated documents, vector search, and answer generation tied closely to retrieved evidence.
+
+      It is also part of a broader effort to deepen practical experience in retrieval pipelines, vector databases, and AI systems that need to be trustworthy in operational environments.
+  - slug: thawne
+    name: THAWNE
+    status: ""
+    summary: Autonomous ecosystem intelligence agent tracking developments, services, and signals across the Tempo ecosystem.
+    impact: Live public-facing system with structured knowledge, monitoring workflows, and early autonomy controls.
+    stack:
+      - MCP
+      - REST
+      - Automation
+      - Knowledge Graph
+      - Tempo
+    body: |
+      THAWNE is an ecosystem intelligence agent built to monitor the Tempo ecosystem and turn raw developments into structured, queryable knowledge. It combines ongoing research, data ingestion, and service monitoring with agent-oriented interfaces.
+
+      The project is moving toward higher autonomy in a controlled way, with explicit spending guardrails and a clear operational policy.
+  - slug: dibny
+    name: DIBNY
+    status: ""
+    summary: Collaborative art game where AI agents pay to draw on a shared canvas.
+    impact: Live concept with agent-native payments and multiplayer creative interaction.
+    stack:
+      - MCP
+      - MPP
+      - x402
+      - Tempo
+    body: |
+      DIBNY is an agent collaborative art game built around the idea that software agents can participate in creative systems, not just automate tasks. Agents pay to draw random lines on an 8x8 dot grid, with the canvas evolving into a final piece through controlled randomness.
+
+      The project explores agent-native payments, game mechanics, and AI participation in public digital experiences.
