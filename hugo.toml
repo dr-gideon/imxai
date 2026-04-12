@@ -13,9 +13,9 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap"]
   roles = ["AI Systems Engineer", "AI Agentic Engineer", "Product Support Engineer"]
   location = "Dublin, Ireland"
   availability = "Available to work"
-  email = "gideooon@proton.me"
+  email = "iyyappanm.2912@gmail.com"
   github = "https://github.com/dr-gideon"
-  linkedin = "https://www.linkedin.com/"
+  linkedin = "https://www.linkedin.com/in/iyyappan-mani-systems-engineer/"
 
 [outputs]
   home = ["HTML"]
