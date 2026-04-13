@@ -2,11 +2,15 @@
 <section class="hero">
   <div class="hero-copy reveal-slide">
     <p class="eyebrow">{{ site.Params.role }}</p>
-    <h1 class="hero-name">{{ site.Params.name }}</h1>
-    <p class="tagline">{{ site.Params.tagline }}</p>
+    <h1 class="hero-name hero-name-large">{{ site.Params.name }}</h1>
+    <p class="hero-trust-line">8+ years working across SAP Business One, reporting systems, data workflows, and AI-assisted product development.</p>
     <div class="hero-facts">
-      <span class="availability-pill">{{ site.Params.availability }}</span>
+      <span class="availability-pill">Open to roles</span>
       <span>{{ site.Params.location }}</span>
+    </div>
+    <div class="scroll-cue" aria-hidden="true">
+      <span class="scroll-cue-line"></span>
+      <span class="scroll-cue-text">SCROLL</span>
     </div>
   </div>
 </section>
@@ -130,6 +134,7 @@
             <div class="timeline-main">
               <h3>Milner Browne</h3>
               <p>SAP Business One Consultant</p>
+              <p class="timeline-impact">Delivering SAP Business One implementations, reporting systems, and data workflow solutions across ERP, MongoDB, and analytics environments</p>
             </div>
             <span class="timeline-date">2018 - Now</span>
           </div>
@@ -137,6 +142,7 @@
             <div class="timeline-main">
               <h3>Groupon</h3>
               <p>Customer Support Representative</p>
+              <p class="timeline-impact">Built a strong foundation in troubleshooting, communication, and customer-facing problem solving in a high volume support environment</p>
             </div>
             <span class="timeline-date">2014 - 2016</span>
           </div>
@@ -148,6 +154,7 @@
           <div class="timeline-item">
             <div class="timeline-main">
               <h3>Notion MCP Hackathon</h3>
+              <p class="timeline-impact">Participated in the Notion MCP Challenge by shaping and testing THAWNE's bidirectional Notion interface, enabling human review and structural intelligence flow for an autonomous blockchain agent</p>
             </div>
             <span class="timeline-date">2026</span>
           </div>
@@ -168,15 +175,17 @@
   </div>
 </section>
 
-<section id="contact" class="section section-narrow contact-block">
-  <div class="section-head">
-    <h2>Open to the right conversation.</h2>
-  </div>
-  <p>If you are hiring for AI systems, agent tooling, or technical product roles, I would be glad to connect.</p>
-  <div class="contact-links">
-    <a href="mailto:{{ site.Params.email }}">Email</a>
-    <a href="{{ site.Params.github }}" target="_blank" rel="noopener noreferrer">GitHub</a>
-    <a href="{{ site.Params.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+<section id="contact" class="section contact-section">
+  <div class="contact-block section-narrow">
+    <div class="section-head">
+      <h2>Open to the right conversation.</h2>
+    </div>
+    <p>If you are hiring for AI systems, agent tooling, or technical product roles, I would be glad to connect.</p>
+    <div class="contact-links">
+      <a href="mailto:{{ site.Params.email }}">Email</a>
+      <a href="{{ site.Params.github }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="{{ site.Params.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
   </div>
 </section>
 {{ end }}

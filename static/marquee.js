@@ -3,17 +3,26 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!track) return;
 
   let rafId = null;
+  let previousTime = null;
   let x = 0;
-  let speed = 0.8;
+  const speed = 36;
 
-  const getResetWidth = () => track.scrollWidth / 2;
+  const getResetWidth = () => {
+    const firstGroup = track.querySelector('.skills-group');
+    return firstGroup ? firstGroup.getBoundingClientRect().width : track.scrollWidth / 2;
+  };
+
   let resetWidth = getResetWidth();
 
-  const step = () => {
-    x -= speed;
+  const step = (time) => {
+    if (previousTime == null) previousTime = time;
+    const delta = Math.min((time - previousTime) / 1000, 0.05);
+    previousTime = time;
+
+    x -= speed * delta;
 
     if (Math.abs(x) >= resetWidth) {
-      x = 0;
+      x += resetWidth;
     }
 
     track.style.transform = `translate3d(${x}px, 0, 0)`;
@@ -24,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (rafId) cancelAnimationFrame(rafId);
     resetWidth = getResetWidth();
     x = 0;
+    previousTime = null;
     track.style.transform = 'translate3d(0, 0, 0)';
     rafId = requestAnimationFrame(step);
   };
@@ -33,9 +43,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   track.addEventListener('mouseenter', () => {
     if (rafId) cancelAnimationFrame(rafId);
+    previousTime = null;
   });
 
   track.addEventListener('mouseleave', () => {
+    previousTime = null;
     rafId = requestAnimationFrame(step);
   });
 });

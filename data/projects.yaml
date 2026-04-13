@@ -1,18 +1,4 @@
 projects:
-  - slug: culld
-    name: CULLD
-    status: WORK IN PROGRESS
-    summary: Agent-native recruiting platform designed to help AI systems search, evaluate, and surface talent.
-    impact: Active build focused on AI-era hiring workflows, structured profiles, and recruiter tooling.
-    stack:
-      - MCP
-      - AI Matching
-      - Verification Flows
-      - Role-based Access
-    body: |
-      Culld is a recruiting platform built for agent-native workflows. It is designed around the idea that AI systems should be able to search structured talent data, evaluate fit, and support hiring workflows in a more direct way than traditional professional networks.
-
-      The project combines profile ingestion, filtering, verification, and matching into a system intended for recruiters, candidates, and companies.
   - slug: argus
     name: ARGUS
     status: WORK IN PROGRESS
@@ -28,6 +14,20 @@ projects:
       ARGUS is a retrieval-augmented support assistant designed around real-world troubleshooting and knowledge retrieval. The project focuses on building a grounded support workflow using curated documents, vector search, and answer generation tied closely to retrieved evidence.
 
       It is also part of a broader effort to deepen practical experience in retrieval pipelines, vector databases, and AI systems that need to be trustworthy in operational environments.
+  - slug: culld
+    name: CULLD
+    status: WORK IN PROGRESS
+    summary: Agent-native recruiting platform designed to help AI systems search, evaluate, and surface talent.
+    impact: Active build focused on AI-era hiring workflows, structured profiles, and recruiter tooling.
+    stack:
+      - MCP
+      - AI Matching
+      - Verification Flows
+      - Role-based Access
+    body: |
+      Culld is a recruiting platform built for agent-native workflows. It is designed around the idea that AI systems should be able to search structured talent data, evaluate fit, and support hiring workflows in a more direct way than traditional professional networks.
+
+      The project combines profile ingestion, filtering, verification, and matching into a system intended for recruiters, candidates, and companies.
   - slug: thawne
     name: THAWNE
     status: ""
