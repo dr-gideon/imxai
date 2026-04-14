@@ -1,0 +1,46 @@
+<div class="project-v2-sequence-diagram" aria-label="ARGUS flow sequence diagram">
+  <div class="project-v2-sequence-actors">
+    <div></div>
+    <div class="project-v2-sequence-actor">Source</div>
+    <div class="project-v2-sequence-actor">Ingestion</div>
+    <div class="project-v2-sequence-actor">Canonical</div>
+    <div class="project-v2-sequence-actor">Retrieval</div>
+    <div class="project-v2-sequence-actor">Answer</div>
+  </div>
+
+  <div class="project-v2-sequence-lifelines">
+    <div></div>
+    <div class="project-v2-sequence-lifeline"></div>
+    <div class="project-v2-sequence-lifeline"></div>
+    <div class="project-v2-sequence-lifeline"></div>
+    <div class="project-v2-sequence-lifeline"></div>
+    <div class="project-v2-sequence-lifeline"></div>
+  </div>
+
+  <div class="project-v2-sequence-steps">
+    <div class="project-v2-sequence-step-no">01</div>
+    <div class="project-v2-sequence-message" style="grid-column: 2 / 4;"><div class="project-v2-sequence-message-line"></div><div class="project-v2-sequence-message-label">raw documents enter pipeline</div></div>
+    <div></div><div></div><div></div>
+
+    <div class="project-v2-sequence-step-no">02</div>
+    <div></div><div class="project-v2-sequence-message" style="grid-column: 3 / 4;"><div class="project-v2-sequence-message-line"></div><div class="project-v2-sequence-message-label">extract text</div></div><div></div><div></div><div></div>
+
+    <div class="project-v2-sequence-step-no">03</div>
+    <div></div><div class="project-v2-sequence-message" style="grid-column: 3 / 4;"><div class="project-v2-sequence-message-line"></div><div class="project-v2-sequence-message-label">normalize structure</div></div><div></div><div></div><div></div>
+
+    <div class="project-v2-sequence-step-no">04</div>
+    <div></div><div></div><div class="project-v2-sequence-message" style="grid-column: 4 / 5;"><div class="project-v2-sequence-message-line"></div><div class="project-v2-sequence-message-label">chunk + embed evidence</div></div><div></div><div></div>
+
+    <div class="project-v2-sequence-step-no">05</div>
+    <div></div><div></div><div class="project-v2-sequence-message" style="grid-column: 4 / 5;"><div class="project-v2-sequence-message-line"></div><div class="project-v2-sequence-message-label">search relevant passages</div></div><div></div><div></div>
+
+    <div class="project-v2-sequence-step-no">06</div>
+    <div></div><div></div><div></div><div class="project-v2-sequence-message project-v2-sequence-message-accent" style="grid-column: 5 / 6;"><div class="project-v2-sequence-message-line"></div><div class="project-v2-sequence-message-label">answer with citations</div></div><div></div>
+  </div>
+
+  <div class="project-v2-sequence-trust">
+    <div class="project-v2-sequence-pill">Evidence First</div>
+    <div class="project-v2-sequence-pill">Metadata Rules</div>
+    <div class="project-v2-sequence-pill">Uncertainty Handling</div>
+  </div>
+</div>
