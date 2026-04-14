@@ -139,5 +139,12 @@
 - Switched the homepage scroll cue from flow-based spacing to project-page-style absolute positioning inside `.hero-copy`, so it can align with the trust line cleanly without moving the ribbon.
 - Moved the homepage skills ribbon slightly downward on its own after the cue-positioning change pulled it upward visually.
 
+### Deployment
+- Dr. Wells approved the IM x AI preview state as deploy-ready and gave the magic phrase.
+- Deployed the latest IM x AI changes by committing `4f77a7f` (`Refine project pages and homepage signals`) and pushing `main` to `dr-gideon/imxai`.
+- Cloudflare Pages build failed because the shared project-page template referenced `argus-flow.html` and `culld-flow.html`, but those two partials had not been committed yet.
+- Fixed by committing `e03d1c5` (`Add missing project diagram partials`) and pushing `main` again.
+- After the build succeeded, the homepage rendered correctly but the live project pages still did not visually match preview, so I hardened `static/css/project-page-v2.css` and pushed `cb1261b` (`Harden project page styling`).
+
 ### Next step
-- Preview the homepage cards and THAWNE page, then do any final visual polish if needed.
+- Wait for Cloudflare Pages to rebuild from `cb1261b`, then confirm the live project pages match preview more closely.

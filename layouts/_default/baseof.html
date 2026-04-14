@@ -9,17 +9,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Serif+Display:ital@0;1&family=Fraunces:opsz,wght,SOFT@9..144,400..700,0..100&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/project-page-v2.css">
 </head>
 <body>
-  <header class="site-header{{ if .IsHome }} home-header{{ end }}">
+  <header class="site-header{{ if .IsHome }} home-header{{ else if .IsPage }} home-header{{ end }}">
     <a href="/" class="site-brand">{{ site.Params.brand }}</a>
     <nav class="site-nav">
-      {{ range site.Menus.main }}
-      <a href="{{ .URL }}">{{ .Name }}</a>
+      {{ if .IsHome }}
+        {{ range site.Menus.main }}
+        <a href="{{ .URL }}">{{ .Name }}</a>
+        {{ end }}
+      {{ else }}
+        <a href="/">Back Home</a>
       {{ end }}
     </nav>
   </header>
-  <main{{ if .IsHome }} class="home-main"{{ end }}>
+  <main{{ if .IsHome }} class="home-main"{{ else if .IsPage }} class="project-main"{{ end }}>
     {{ block "main" . }}{{ end }}
   </main>
   <footer class="site-footer">
