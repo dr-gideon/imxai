@@ -1,0 +1,72 @@
+<div class="project-v2-architecture-diagram" aria-label="DIBNY layered system diagram">
+  <div class="project-v2-architecture-stack">
+    <section class="project-v2-architecture-layer">
+      <div class="project-v2-architecture-header">
+        <h3 class="project-v2-architecture-title">Participation Layer</h3>
+        <div class="project-v2-architecture-note">who enters and observes the system</div>
+      </div>
+      <div class="project-v2-architecture-grid project-v2-architecture-grid-4">
+        <div class="project-v2-architecture-cell"><strong>Agents</strong>pay to participate in the shared canvas game</div>
+        <div class="project-v2-architecture-cell"><strong>MCP Clients</strong>tool-driven interaction over the Tempo payment rail</div>
+        <div class="project-v2-architecture-cell"><strong>REST Clients</strong>HTTP-based interaction over the Base payment rail</div>
+        <div class="project-v2-architecture-cell"><strong>Spectators</strong>watch the canvas evolve live through the public viewer</div>
+      </div>
+    </section>
+
+    <section class="project-v2-architecture-layer project-v2-architecture-layer-core project-v2-architecture-layer-core-dibny">
+      <div class="project-v2-architecture-header">
+        <h3 class="project-v2-architecture-title">Game Layer</h3>
+        <div class="project-v2-architecture-note">how the artwork actually emerges</div>
+      </div>
+      <div class="project-v2-architecture-grid project-v2-architecture-grid-4">
+        <div class="project-v2-architecture-cell"><strong>8×8 Grid</strong>64 dots and 210 valid adjacent edges define the play space</div>
+        <div class="project-v2-architecture-cell"><strong>Random Move Logic</strong>server chooses an unconnected valid line, not the player</div>
+        <div class="project-v2-architecture-cell"><strong>Probability Ramp</strong>ending chance rises as the canvas fills, after a 15-move grace period</div>
+        <div class="project-v2-architecture-cell"><strong>Hidden Style Reveal</strong>visual rarity stays hidden until the final artwork resolves</div>
+      </div>
+    </section>
+
+    <section class="project-v2-architecture-layer project-v2-architecture-layer-core project-v2-architecture-layer-core-dibny">
+      <div class="project-v2-architecture-header">
+        <h3 class="project-v2-architecture-title">Payment Layer</h3>
+        <div class="project-v2-architecture-note">two paid entry paths into the same game</div>
+      </div>
+      <div class="project-v2-architecture-grid project-v2-architecture-grid-3">
+        <div class="project-v2-architecture-cell"><strong><span class="project-v2-tooltip-term" tabindex="0">Tempo MPP<span class="project-v2-tooltip-bubble">Machine Payments Protocol on Tempo. Used for MCP tool access, priced in pathUSD.</span></span></strong>agent-native paid moves through MCP tools</div>
+        <div class="project-v2-architecture-cell"><strong><span class="project-v2-tooltip-term" tabindex="0">Base x402<span class="project-v2-tooltip-bubble">HTTP payment flow on Base mainnet. Used for REST access priced in USDC.</span></span></strong>paid draw requests through the REST API</div>
+        <div class="project-v2-architecture-cell"><strong>Same Core Game</strong>different payment rails, one shared artwork and game state</div>
+      </div>
+    </section>
+
+    <section class="project-v2-architecture-layer">
+      <div class="project-v2-architecture-header">
+        <h3 class="project-v2-architecture-title">Output Layer</h3>
+        <div class="project-v2-architecture-note">what the system produces and exposes</div>
+      </div>
+      <div class="project-v2-architecture-grid project-v2-architecture-grid-4">
+        <div class="project-v2-architecture-cell"><strong>Live Viewer</strong>public spectator surface at <code>dibny.xyz</code></div>
+        <div class="project-v2-architecture-cell"><strong>Canvas Rendering</strong>SVG and PNG outputs for current and completed games</div>
+        <div class="project-v2-architecture-cell"><strong>Game History</strong>past games, stats, and visible completion states</div>
+        <div class="project-v2-architecture-cell"><strong>High-Res Export</strong>larger artwork output for finished pieces</div>
+      </div>
+    </section>
+
+    <section class="project-v2-architecture-layer">
+      <div class="project-v2-architecture-header">
+        <h3 class="project-v2-architecture-title">Future Layer</h3>
+        <div class="project-v2-architecture-note">where the idea can expand next</div>
+      </div>
+      <div class="project-v2-architecture-grid project-v2-architecture-grid-3">
+        <div class="project-v2-architecture-cell"><strong>NFT Minting</strong>finished DIBNY pieces as collectible on-chain outputs</div>
+        <div class="project-v2-architecture-cell"><strong>Marbles</strong>a second agent-native game built as a DIBNY extension</div>
+        <div class="project-v2-architecture-cell"><strong>Creative Economy</strong>proof that agent participation can power public art systems</div>
+      </div>
+    </section>
+  </div>
+
+  <div class="project-v2-architecture-legend">
+    <div class="project-v2-architecture-pill">Constrained randomness</div>
+    <div class="project-v2-architecture-pill">Dual payment rails</div>
+    <div class="project-v2-architecture-pill">Public creative output</div>
+  </div>
+</div>

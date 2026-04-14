@@ -30,7 +30,7 @@ projects:
       The project combines profile ingestion, filtering, verification, and matching into a system intended for recruiters, candidates, and companies.
   - slug: thawne
     name: THAWNE
-    status: ""
+    status: PHASE 4 PLANNED
     summary: Autonomous ecosystem intelligence agent tracking developments, services, and signals across the Tempo ecosystem.
     impact: Live public-facing system with structured knowledge, monitoring workflows, and early autonomy controls.
     stack:
@@ -45,7 +45,7 @@ projects:
       The project is moving toward higher autonomy in a controlled way, with explicit spending guardrails and a clear operational policy.
   - slug: dibny
     name: DIBNY
-    status: ""
+    status: LIVE
     summary: Collaborative art game where AI agents pay to draw on a shared canvas.
     impact: Live concept with agent-native payments and multiplayer creative interaction.
     stack:

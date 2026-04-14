@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>THAWNE Diagram Preview</title>
+  <style>
+    :root {
+      --bg: #0b0b0c;
+      --text: #f5f5f2;
+      --muted: rgba(245,245,242,0.72);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Manrope, Inter, system-ui, sans-serif;
+      padding: 48px 28px 72px;
+    }
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+    .label {
+      margin-bottom: 18px;
+      color: rgba(245,245,242,0.52);
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+.project-v2-content .project-v2-architecture-diagram {
+  width: min(1040px, calc(100vw - 192px));
+  max-width: none;
+  margin-top: 24px;
+}
+.project-v2-content .project-v2-architecture-stack {
+  display: grid;
+  gap: 14px;
+}
+.project-v2-content .project-v2-architecture-layer {
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 22px;
+  padding: 18px 20px;
+  background: rgba(255,255,255,0.018);
+}
+.project-v2-content .project-v2-architecture-layer-core {
+  border-color: rgba(255,179,71,0.18);
+  background: linear-gradient(180deg, rgba(255,179,71,0.035), rgba(255,255,255,0.014));
+  box-shadow: inset 0 0 0 1px rgba(255,179,71,0.04);
+}
+.project-v2-content .project-v2-architecture-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 18px;
+  margin-bottom: 16px;
+}
+.project-v2-content .project-v2-architecture-title {
+  margin: 0;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(245,245,242,0.82);
+}
+.project-v2-content .project-v2-architecture-note {
+  color: rgba(245,245,242,0.56);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.project-v2-content .project-v2-architecture-grid {
+  display: grid;
+  gap: 12px;
+}
+.project-v2-content .project-v2-architecture-grid-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+.project-v2-content .project-v2-architecture-grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.project-v2-content .project-v2-architecture-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.project-v2-content .project-v2-architecture-cell {
+  padding: 14px;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 16px;
+  background: rgba(255,255,255,0.014);
+  font-size: 12px;
+  line-height: 1.4;
+  color: rgba(245,245,242,0.82);
+}
+.project-v2-content .project-v2-architecture-layer-core .project-v2-architecture-cell {
+  border-color: rgba(255,179,71,0.12);
+  background: rgba(255,179,71,0.025);
+}
+.project-v2-content .project-v2-architecture-cell strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+  color: var(--text);
+  font-weight: 600;
+}
+.project-v2-content .project-v2-architecture-legend {
+  margin-top: 18px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.project-v2-content .project-v2-architecture-pill {
+  padding: 6px 9px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 999px;
+  color: rgba(245,245,242,0.68);
+  font-size: 10px;
+  background: rgba(255,255,255,0.02);
+  white-space: nowrap;
+}
+.tooltip-term {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: help;
+}
+.tooltip-term::after {
+  content: "?";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 999px;
+  color: rgba(255,255,255,0.62);
+  font-size: 9px;
+  line-height: 1;
+}
+.tooltip-bubble {
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 10px);
+  width: 220px;
+  padding: 10px 11px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  background: rgba(10,10,11,0.96);
+  color: rgba(245,245,242,0.82);
+  font-size: 11px;
+  line-height: 1.45;
+  letter-spacing: 0;
+  text-transform: none;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.28);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity 140ms ease, transform 140ms ease, visibility 140ms ease;
+  pointer-events: none;
+  z-index: 20;
+}
+.tooltip-term:hover .tooltip-bubble,
+.tooltip-term:focus-within .tooltip-bubble {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+@media (max-width: 900px) {
+  .project-v2-content .project-v2-architecture-diagram { width: 100%; }
+  .project-v2-content .project-v2-architecture-grid-5,
+  .project-v2-content .project-v2-architecture-grid-4,
+  .project-v2-content .project-v2-architecture-grid-3 { grid-template-columns: 1fr; }
+  .project-v2-content .project-v2-architecture-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .project-v2-content .project-v2-architecture-note { white-space: normal; }
+  .tooltip-bubble {
+    left: 0;
+    right: auto;
+    width: min(240px, 70vw);
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="wrap project-v2-content">
+    <div class="label">Standalone preview · THAWNE system diagram</div>
+    <div class="project-v2-architecture-diagram" aria-label="THAWNE layered system diagram">
+      <div class="project-v2-architecture-stack">
+        <section class="project-v2-architecture-layer">
+          <div class="project-v2-architecture-header">
+            <h3 class="project-v2-architecture-title">Input Layer</h3>
+            <div class="project-v2-architecture-note">where ecosystem signal enters the system</div>
+          </div>
+          <div class="project-v2-architecture-grid project-v2-architecture-grid-5">
+            <div class="project-v2-architecture-cell"><strong>Docs</strong>Tempo docs, llms-full exports, and official technical references</div>
+            <div class="project-v2-architecture-cell"><strong>Web + GitHub</strong>builder launches, repos, integrations, and ecosystem changes</div>
+            <div class="project-v2-architecture-cell"><strong>MPP Directory</strong>service snapshots, diffs, and newly listed endpoints</div>
+            <div class="project-v2-architecture-cell"><strong>Chain Observer</strong>wallet, block, and transaction activity from Tempo RPC</div>
+            <div class="project-v2-architecture-cell"><strong>Inbox</strong>manual intel drops and sweep follow-ups</div>
+          </div>
+        </section>
+
+        <section class="project-v2-architecture-layer project-v2-architecture-layer-core">
+          <div class="project-v2-architecture-header">
+            <h3 class="project-v2-architecture-title">Intelligence Layer</h3>
+            <div class="project-v2-architecture-note">how raw signal becomes structured knowledge</div>
+          </div>
+          <div class="project-v2-architecture-grid project-v2-architecture-grid-4">
+            <div class="project-v2-architecture-cell"><strong>Daily Sweep</strong>collects, filters, and summarizes ecosystem movement</div>
+            <div class="project-v2-architecture-cell"><strong>Report Processing</strong>turns sweep output into ingestible intelligence reports</div>
+            <div class="project-v2-architecture-cell"><strong>Entity Linking</strong>connects new developments to known projects, people, and services</div>
+            <div class="project-v2-architecture-cell"><strong>Knowledge Base</strong>stores entities, relations, developments, MPP services, and observer data</div>
+          </div>
+        </section>
+
+        <section class="project-v2-architecture-layer project-v2-architecture-layer-core">
+          <div class="project-v2-architecture-header">
+            <h3 class="project-v2-architecture-title">Access Layer</h3>
+            <div class="project-v2-architecture-note">how intelligence is exposed to humans and agents</div>
+          </div>
+          <div class="project-v2-architecture-grid project-v2-architecture-grid-4">
+            <div class="project-v2-architecture-cell"><strong><span class="tooltip-term" tabindex="0">MCP Server<span class="tooltip-bubble">Model Context Protocol server. It exposes THAWNE tools, resources, and prompts so AI agents can query the system directly.</span></span></strong>agent-facing tools, resources, and prompts</div>
+            <div class="project-v2-architecture-cell"><strong>REST Discovery</strong>public endpoints and lightweight integration surface</div>
+            <div class="project-v2-architecture-cell"><strong><span class="tooltip-term" tabindex="0">MPP Access<span class="tooltip-bubble">Machine Payments Protocol. It lets agents pay for access to selected THAWNE intelligence paths without relying on API keys.</span></span></strong>paid intelligence paths for selected queries and endpoints</div>
+            <div class="project-v2-architecture-cell"><strong>Public Surface</strong><code>thawne.xyz</code> as the live service entry point</div>
+          </div>
+        </section>
+
+        <section class="project-v2-architecture-layer">
+          <div class="project-v2-architecture-header">
+            <h3 class="project-v2-architecture-title">Autonomy Layer</h3>
+            <div class="project-v2-architecture-note">how outbound action stays controlled</div>
+          </div>
+          <div class="project-v2-architecture-grid project-v2-architecture-grid-4">
+            <div class="project-v2-architecture-cell"><strong>Policy Engine</strong>allowlist checks, approval rules, and spend validation</div>
+            <div class="project-v2-architecture-cell"><strong>Guardrails</strong>$0.05 per tx, $1 per day, $5 per week, auto-freeze, circuit break</div>
+            <div class="project-v2-architecture-cell"><strong>Paid Actions</strong>validated outbound requests to approved MPP services</div>
+            <div class="project-v2-architecture-cell"><strong>Proven Path</strong>real paid Brave call completed under live policy control</div>
+          </div>
+        </section>
+
+        <section class="project-v2-architecture-layer">
+          <div class="project-v2-architecture-header">
+            <h3 class="project-v2-architecture-title">Extension Layer</h3>
+            <div class="project-v2-architecture-note">where the core system can be reused elsewhere</div>
+          </div>
+          <div class="project-v2-architecture-grid project-v2-architecture-grid-3">
+            <div class="project-v2-architecture-cell"><strong>Notion MCP Bridge</strong>syncs THAWNE intelligence into a separate workspace workflow</div>
+            <div class="project-v2-architecture-cell"><strong>Sweep Reports</strong>structured outputs that can travel beyond the core database</div>
+            <div class="project-v2-architecture-cell"><strong>Future Agents</strong>foundation for deeper autonomous research and service evaluation</div>
+          </div>
+        </section>
+      </div>
+
+      <div class="project-v2-architecture-legend">
+        <div class="project-v2-architecture-pill">Signal into structure</div>
+        <div class="project-v2-architecture-pill">Access as infrastructure</div>
+        <div class="project-v2-architecture-pill">Autonomy under policy</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

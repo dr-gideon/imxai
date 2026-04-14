@@ -94,7 +94,7 @@
         <div class="project-card-left">
           <div class="project-meta">
             <span class="project-number">{{ printf "%02d" (add $index 1) }}</span>
-            {{ if $project.status }}<span class="project-status{{ if eq $project.status "WORK IN PROGRESS" }} project-status-wip{{ end }}">{{ $project.status }}</span>{{ end }}
+            {{ if $project.status }}<span class="project-status{{ if eq $project.status "WORK IN PROGRESS" }} project-status-wip{{ end }}{{ if eq $project.status "PHASE 4 PLANNED" }} project-status-planned{{ end }}{{ if eq $project.status "LIVE" }} project-status-live{{ end }}">{{ $project.status }}</span>{{ end }}
           </div>
           <p class="project-summary">{{ $project.summary }}</p>
           <div class="project-stack">
@@ -104,8 +104,13 @@
           </div>
         </div>
         <div class="project-divider" aria-hidden="true"></div>
-        <div class="project-card-right">
+        <div class="project-card-center">
           <span class="project-name">{{ $project.name }}</span>
+        </div>
+        <div class="project-card-arrow" aria-hidden="true">
+          <span class="project-arrow-circle">
+            <span class="project-arrow-icon">↗</span>
+          </span>
         </div>
       </div>
     </a>

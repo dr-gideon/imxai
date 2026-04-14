@@ -1,0 +1,74 @@
+<div class="project-v2-architecture-diagram" aria-label="THAWNE layered system diagram">
+  <div class="project-v2-architecture-stack">
+    <section class="project-v2-architecture-layer">
+      <div class="project-v2-architecture-header">
+        <h3 class="project-v2-architecture-title">Input Layer</h3>
+        <div class="project-v2-architecture-note">where ecosystem signal enters the system</div>
+      </div>
+      <div class="project-v2-architecture-grid project-v2-architecture-grid-5 project-v2-architecture-grid-5-adaptive">
+        <div class="project-v2-architecture-cell"><strong>Docs</strong>Tempo docs, llms-full exports, and official technical references</div>
+        <div class="project-v2-architecture-cell"><strong>Web + GitHub</strong>builder launches, repos, integrations, and ecosystem changes</div>
+        <div class="project-v2-architecture-cell"><strong>MPP Directory</strong>service snapshots, diffs, and newly listed endpoints</div>
+        <div class="project-v2-architecture-cell"><strong>Chain Observer</strong>wallet, block, and transaction activity from Tempo RPC</div>
+        <div class="project-v2-architecture-cell"><strong>Inbox</strong>manual intel drops and sweep follow-ups</div>
+      </div>
+    </section>
+
+    <section class="project-v2-architecture-layer project-v2-architecture-layer-core">
+      <div class="project-v2-architecture-header">
+        <h3 class="project-v2-architecture-title">Intelligence Layer</h3>
+        <div class="project-v2-architecture-note">how raw signal becomes structured knowledge</div>
+      </div>
+      <div class="project-v2-architecture-grid project-v2-architecture-grid-4">
+        <div class="project-v2-architecture-cell"><strong>Daily Sweep</strong>collects, filters, and summarizes ecosystem movement</div>
+        <div class="project-v2-architecture-cell"><strong>Report Processing</strong>turns sweep output into ingestible intelligence reports</div>
+        <div class="project-v2-architecture-cell"><strong>Entity Linking</strong>connects new developments to known projects, people, and services</div>
+        <div class="project-v2-architecture-cell"><strong>Knowledge Base</strong>stores entities, relations, developments, MPP services, and observer data</div>
+      </div>
+    </section>
+
+    <section class="project-v2-architecture-layer project-v2-architecture-layer-core">
+      <div class="project-v2-architecture-header">
+        <h3 class="project-v2-architecture-title">Access Layer</h3>
+        <div class="project-v2-architecture-note">how intelligence is exposed to humans and agents</div>
+      </div>
+      <div class="project-v2-architecture-grid project-v2-architecture-grid-4">
+        <div class="project-v2-architecture-cell"><strong><span class="project-v2-tooltip-term" tabindex="0">MCP Server<span class="project-v2-tooltip-bubble">Model Context Protocol server. It exposes THAWNE tools, resources, and prompts so AI agents can query the system directly.</span></span></strong>agent-facing tools, resources, and prompts</div>
+        <div class="project-v2-architecture-cell"><strong>REST Discovery</strong>public endpoints and lightweight integration surface</div>
+        <div class="project-v2-architecture-cell"><strong><span class="project-v2-tooltip-term" tabindex="0">MPP Access<span class="project-v2-tooltip-bubble">Machine Payments Protocol. It lets agents pay for access to selected THAWNE intelligence paths without relying on API keys.</span></span></strong>paid intelligence paths for selected queries and endpoints</div>
+        <div class="project-v2-architecture-cell"><strong>Public Surface</strong><code>thawne.xyz</code> as the live service entry point</div>
+      </div>
+    </section>
+
+    <section class="project-v2-architecture-layer">
+      <div class="project-v2-architecture-header">
+        <h3 class="project-v2-architecture-title">Autonomy Layer</h3>
+        <div class="project-v2-architecture-note">how outbound action stays controlled</div>
+      </div>
+      <div class="project-v2-architecture-grid project-v2-architecture-grid-4">
+        <div class="project-v2-architecture-cell"><strong>Policy Engine</strong>allowlist checks, approval rules, and spend validation</div>
+        <div class="project-v2-architecture-cell"><strong>Guardrails</strong>$0.05 per tx, $1 per day, $5 per week, auto-freeze, circuit break</div>
+        <div class="project-v2-architecture-cell"><strong>Paid Actions</strong>validated outbound requests to approved MPP services</div>
+        <div class="project-v2-architecture-cell"><strong>Proven Path</strong>real paid Brave call completed under live policy control</div>
+      </div>
+    </section>
+
+    <section class="project-v2-architecture-layer">
+      <div class="project-v2-architecture-header">
+        <h3 class="project-v2-architecture-title">Extension Layer</h3>
+        <div class="project-v2-architecture-note">where the core system can be reused elsewhere</div>
+      </div>
+      <div class="project-v2-architecture-grid project-v2-architecture-grid-3">
+        <div class="project-v2-architecture-cell"><strong>Notion MCP Bridge</strong>syncs THAWNE intelligence into a separate workspace workflow</div>
+        <div class="project-v2-architecture-cell"><strong>Sweep Reports</strong>structured outputs that can travel beyond the core database</div>
+        <div class="project-v2-architecture-cell"><strong>Future Agents</strong>foundation for deeper autonomous research and service evaluation</div>
+      </div>
+    </section>
+  </div>
+
+  <div class="project-v2-architecture-legend">
+    <div class="project-v2-architecture-pill">Signal into structure</div>
+    <div class="project-v2-architecture-pill">Access as infrastructure</div>
+    <div class="project-v2-architecture-pill">Autonomy under policy</div>
+  </div>
+</div>
