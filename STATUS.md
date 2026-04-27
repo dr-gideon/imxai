@@ -248,3 +248,13 @@
 - NORA full case-study page added with system diagram and purple accent styling.
 - ARGUS status updated to `FINAL BUILD STAGE`.
 - Preview-first workflow completed before live deploy.
+
+## 2026-04-27 — Project status pill color fix
+
+### Completed changes
+- Fixed landing-page project status pills so non-default statuses have visible colored borders/backgrounds, not just subtle text color.
+- Covered `LIVE INTERNAL PILOT` / demo styling, `FINAL BUILD STAGE`, `PHASE 4 PLANNED`, and `LIVE` for consistency.
+
+### Verification
+- Ran `hugo --minify` successfully.
+- Verified generated homepage still contains `project-status-demo` and `project-status-final-build` classes.
