@@ -229,3 +229,22 @@
 - Ran `hugo --minify` successfully.
 - Verified generated homepage and ARGUS project page both contain `FINAL BUILD STAGE`.
 - Still preview-only; no commit, push, or live deploy performed.
+
+## 2026-04-27 — NORA portfolio live deployment
+
+### Deployment
+- Dr. Wells approved the preview and gave the magic phrase.
+- Ran final `hugo --minify` before deployment; build succeeded with the existing section-layout warning only.
+- Committed and pushed the approved changes to `main`.
+- Commit: `c675d08` (`Add NORA portfolio case study`).
+
+### Live result
+- Cloudflare Pages picked up the push and the live site updated successfully.
+- Verified live homepage contains NORA with `LIVE INTERNAL PILOT`.
+- Verified live NORA page contains the revised inspiration wording about service-call logging taking a person out of the support team.
+
+### Included changes
+- NORA added as the first landing-page project card.
+- NORA full case-study page added with system diagram and purple accent styling.
+- ARGUS status updated to `FINAL BUILD STAGE`.
+- Preview-first workflow completed before live deploy.
