@@ -258,3 +258,18 @@
 ### Verification
 - Ran `hugo --minify` successfully.
 - Verified generated homepage still contains `project-status-demo` and `project-status-final-build` classes.
+
+## 2026-04-27 — Live portfolio update confirmed
+
+### Confirmation
+- Dr. Wells checked the live IM x AI landing page after the status-pill styling fix and confirmed everything looks good.
+- Final live state for this pass:
+  - NORA is first on the landing-page project cards.
+  - NORA status is `LIVE INTERNAL PILOT` with visible purple pill styling.
+  - NORA has a full project page and system diagram.
+  - ARGUS status is `FINAL BUILD STAGE` with visible amber pill styling.
+  - Status pill styling is consistent across project cards.
+
+### Resume point
+- No further live changes are pending from this portfolio pass.
+- Existing untracked preview artifacts remain local and were not included in the deployment.
