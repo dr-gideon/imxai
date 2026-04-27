@@ -1,7 +1,22 @@
 projects:
+  - slug: nora
+    name: NORA
+    status: LIVE INTERNAL PILOT
+    summary: AI-assisted support inbox copilot for Outlook-to-ERP service-call logging, rota visibility, approval, and controlled execution.
+    impact: Live internal pilot wiring across test Outlook, test ERP, consultant availability, LLM-assisted interpretation, and portal approval controls.
+    stack:
+      - Outlook
+      - ERP API
+      - Workflow Automation
+      - LLM Advisory
+      - Portal UI
+    body: |
+      NORA is an internal support workflow copilot designed to automate repeatable service-call logging and email-routing work for a small support team. It classifies whether an email should create a service call, update an existing one, trigger a reassignment, move to manual review, or require no action.
+
+      The system brings logging, Outlook folder movement, consultant availability, rota visibility, approval, and execution into one controlled operational surface.
   - slug: argus
     name: ARGUS
-    status: WORK IN PROGRESS
+    status: FINAL BUILD STAGE
     summary: RAG-based support assistant for business systems knowledge, built to learn retrieval pipelines and grounded AI responses.
     impact: Working retrieval and answer-generation pipeline with curated knowledge and citation-based responses.
     stack:

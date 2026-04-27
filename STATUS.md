@@ -145,6 +145,87 @@
 - Cloudflare Pages build failed because the shared project-page template referenced `argus-flow.html` and `culld-flow.html`, but those two partials had not been committed yet.
 - Fixed by committing `e03d1c5` (`Add missing project diagram partials`) and pushing `main` again.
 - After the build succeeded, the homepage rendered correctly but the live project pages still did not visually match preview, so I hardened `static/css/project-page-v2.css` and pushed `cb1261b` (`Harden project page styling`).
+- Found the real remaining issue: `content/projects/argus.md` and `layouts/_default/baseof.html` were still only local, so ARGUS stayed on old content and the project-page base layout changes never reached production.
+- Fixed by committing `1968882` (`Publish project page base template updates`) and pushing `main` again.
 
-### Next step
-- Wait for Cloudflare Pages to rebuild from `cb1261b`, then confirm the live project pages match preview more closely.
+### Deployment result
+- Cloudflare Pages rebuilt successfully from `1968882` and the live site now reflects the homepage and project-page changes correctly.
+
+### Lesson
+- Before future site deploys, explicitly verify `git status` for missing tracked files in templates, partials, content pages, and shared base/layout files. The main failure here was not the push itself, but leaving required local files uncommitted.
+
+## 2026-04-27 — NORA portfolio preview
+
+### Current state
+- Added NORA to the local IM x AI portfolio preview only; no commit, push, or live deploy was performed.
+- Preview server is running from `labs/projects/imxai` at `http://100.86.180.12:1314/`.
+- NORA page preview is available at `http://100.86.180.12:1314/projects/nora/`.
+
+### Completed changes
+- Added NORA to `data/projects.yaml` as a homepage project card with status `LIVE DEMO READY`.
+- Added `content/projects/nora.md` using the same project-page case-study template as ARGUS, CULLD, THAWNE, and DIBNY:
+  - Inspiration
+  - My Role & Contribution
+  - NORA System
+  - Tools Used
+  - Challenges and How I Solved Them
+  - What I Learned
+  - How AI Supported the Work
+  - Current State
+- Added `layouts/partials/nora-flow.html` with a layered workflow/system diagram covering intake, decision, control, execution, and operator surface layers.
+- Updated `layouts/_default/single.html` to render the `NORA_SYSTEM_DIAGRAM` placeholder through the new partial.
+- Added purple accent styling for NORA's project-page scroll cue, diagram core layers, and homepage `LIVE DEMO READY` status badge.
+
+### Verification
+- Ran `hugo --minify` successfully. Hugo built 6 pages with the existing section-layout warning only.
+- Started local Hugo preview on port `1314` with `hugo server --bind 0.0.0.0 --baseURL http://100.86.180.12:1314/ --port 1314 --disableFastRender`.
+- Verified via local curl that the homepage contains the NORA card and the NORA project page renders with `LIVE DEMO READY` and the integrated architecture diagram.
+
+### Deployment
+- Not deployed. Waiting for Dr. Wells' review and explicit approval before live deployment.
+
+## 2026-04-27 — NORA portfolio inspiration refinement
+
+### Completed changes
+- Rewrote NORA's Inspiration section to reflect Dr. Wells' real motivation: automating repetitive service-call logging so a small support team does not lose a person to inbox logging and folder movement.
+- Added the rota/visibility problem explicitly: operators need one place to see who is working, who is on support, who is unavailable, and who is on lunch.
+- Updated NORA's preview status from `LIVE DEMO READY` to `LIVE INTERNAL PILOT` so the page stays strong but honest.
+- Updated the homepage NORA summary and impact copy to mention service-call logging, rota visibility, consultant availability, approval, and controlled execution.
+
+### Verification
+- Ran `hugo --minify` successfully.
+- Verified generated preview contains `LIVE INTERNAL PILOT` and the revised inspiration wording.
+- Still preview-only; no commit, push, or live deploy performed.
+
+## 2026-04-27 — NORA card moved first
+
+### Completed changes
+- Reordered `data/projects.yaml` so NORA is the first project card on the landing page.
+- Existing order after NORA is ARGUS, CULLD, THAWNE, DIBNY.
+
+### Verification
+- Ran `hugo --minify` successfully.
+- Verified generated homepage ordering puts NORA before ARGUS, CULLD, THAWNE, and DIBNY.
+- Still preview-only; no commit, push, or live deploy performed.
+
+## 2026-04-27 — ARGUS status updated
+
+### Completed changes
+- Updated ARGUS status from `WORK IN PROGRESS` to `PRE-LAUNCH` in the homepage project data and ARGUS project page frontmatter.
+- Added homepage status styling for `PRE-LAUNCH` with an amber accent.
+
+### Verification
+- Ran `hugo --minify` successfully.
+- Verified generated homepage and ARGUS project page both contain `PRE-LAUNCH`.
+- Still preview-only; no commit, push, or live deploy performed.
+
+## 2026-04-27 — ARGUS status revised to final build
+
+### Completed changes
+- Revised ARGUS status from `PRE-LAUNCH` to `FINAL BUILD STAGE` in the homepage project data and ARGUS project page frontmatter.
+- Updated homepage status styling class from prelaunch naming to final-build naming while keeping the amber accent.
+
+### Verification
+- Ran `hugo --minify` successfully.
+- Verified generated homepage and ARGUS project page both contain `FINAL BUILD STAGE`.
+- Still preview-only; no commit, push, or live deploy performed.

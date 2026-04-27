@@ -94,7 +94,7 @@
         <div class="project-card-left">
           <div class="project-meta">
             <span class="project-number">{{ printf "%02d" (add $index 1) }}</span>
-            {{ if $project.status }}<span class="project-status{{ if eq $project.status "WORK IN PROGRESS" }} project-status-wip{{ end }}{{ if eq $project.status "PHASE 4 PLANNED" }} project-status-planned{{ end }}{{ if eq $project.status "LIVE" }} project-status-live{{ end }}">{{ $project.status }}</span>{{ end }}
+            {{ if $project.status }}<span class="project-status{{ if eq $project.status "WORK IN PROGRESS" }} project-status-wip{{ end }}{{ if eq $project.status "FINAL BUILD STAGE" }} project-status-final-build{{ end }}{{ if eq $project.status "PHASE 4 PLANNED" }} project-status-planned{{ end }}{{ if eq $project.status "LIVE" }} project-status-live{{ end }}{{ if eq $project.status "LIVE DEMO READY" }} project-status-demo{{ end }}{{ if eq $project.status "LIVE INTERNAL PILOT" }} project-status-demo{{ end }}">{{ $project.status }}</span>{{ end }}
           </div>
           <p class="project-summary">{{ $project.summary }}</p>
           <div class="project-stack">

@@ -1,0 +1,74 @@
+<div class="project-v2-architecture-diagram" aria-label="NORA support workflow system diagram">
+  <div class="project-v2-architecture-stack">
+    <section class="project-v2-architecture-layer">
+      <div class="project-v2-architecture-header">
+        <h3 class="project-v2-architecture-title">Intake Layer</h3>
+        <div class="project-v2-architecture-note">where support work enters the system</div>
+      </div>
+      <div class="project-v2-architecture-grid project-v2-architecture-grid-4">
+        <div class="project-v2-architecture-cell"><strong>Outlook Mailbox</strong>reads customer messages, replies, forwards, and thread context</div>
+        <div class="project-v2-architecture-cell"><strong>Conversation Memory</strong>connects follow-ups to existing non-terminal review items</div>
+        <div class="project-v2-architecture-cell"><strong>Service Call Anchors</strong>extracts service-call numbers from subjects, bodies, and quoted threads</div>
+        <div class="project-v2-architecture-cell"><strong>Manual Review Signals</strong>flags unsafe, ambiguous, link-dependent, or attachment-dependent cases</div>
+      </div>
+    </section>
+
+    <section class="project-v2-architecture-layer project-v2-architecture-layer-core-nora">
+      <div class="project-v2-architecture-header">
+        <h3 class="project-v2-architecture-title">Decision Layer</h3>
+        <div class="project-v2-architecture-note">how NORA turns email into proposed action</div>
+      </div>
+      <div class="project-v2-architecture-grid project-v2-architecture-grid-5 project-v2-architecture-grid-5-adaptive">
+        <div class="project-v2-architecture-cell"><strong>Create</strong>new customer issue with matched customer, contact, priority, and assignee</div>
+        <div class="project-v2-architecture-cell"><strong>Update</strong>routine note for an already-open service call with Outlook move only</div>
+        <div class="project-v2-architecture-cell"><strong>Reassign</strong>customer chase routed to an eligible mapped consultant</div>
+        <div class="project-v2-architecture-cell"><strong>Manual Review</strong>operator-controlled routing when policy or context is not safe enough</div>
+        <div class="project-v2-architecture-cell"><strong>No Action</strong>thanks, closure follow-ups, and cases that should not create work</div>
+      </div>
+    </section>
+
+    <section class="project-v2-architecture-layer project-v2-architecture-layer-core-nora">
+      <div class="project-v2-architecture-header">
+        <h3 class="project-v2-architecture-title">Control Layer</h3>
+        <div class="project-v2-architecture-note">where automation is constrained before execution</div>
+      </div>
+      <div class="project-v2-architecture-grid project-v2-architecture-grid-4">
+        <div class="project-v2-architecture-cell"><strong>Portal Approval</strong>human review, approve, reject, manual-review, and execute controls</div>
+        <div class="project-v2-architecture-cell"><strong>System Gates</strong>operations switch, office hours, full execution, ERP write, and Outlook move gates</div>
+        <div class="project-v2-architecture-cell"><strong>Availability Model</strong>mapped consultants, rota rules, working hours, and overrides</div>
+        <div class="project-v2-architecture-cell"><strong>LLM Advisory</strong>structured intent and urgency support without owning execution authority</div>
+      </div>
+    </section>
+
+    <section class="project-v2-architecture-layer">
+      <div class="project-v2-architecture-header">
+        <h3 class="project-v2-architecture-title">Execution Layer</h3>
+        <div class="project-v2-architecture-note">how approved work touches live test systems</div>
+      </div>
+      <div class="project-v2-architecture-grid project-v2-architecture-grid-3">
+        <div class="project-v2-architecture-cell"><strong>ERP First</strong>creates or reassigns the service call before mail is moved</div>
+        <div class="project-v2-architecture-cell"><strong>Outlook Second</strong>moves the original and merged thread messages to the target folder</div>
+        <div class="project-v2-architecture-cell"><strong>Audit Third</strong>records execution log, review state, and portal notification output</div>
+      </div>
+    </section>
+
+    <section class="project-v2-architecture-layer">
+      <div class="project-v2-architecture-header">
+        <h3 class="project-v2-architecture-title">Operator Surface</h3>
+        <div class="project-v2-architecture-note">how the workflow stays visible and controllable</div>
+      </div>
+      <div class="project-v2-architecture-grid project-v2-architecture-grid-4">
+        <div class="project-v2-architecture-cell"><strong>Operations</strong>queue, detail pane, policy warnings, approval, and execution</div>
+        <div class="project-v2-architecture-cell"><strong>Notifications</strong>portal-native assignment and execution feed</div>
+        <div class="project-v2-architecture-cell"><strong>Team Status</strong>consultant readiness, overrides, and reason visibility</div>
+        <div class="project-v2-architecture-cell"><strong>System Controls</strong>kill switch, office hours, routing, and live-demo gates</div>
+      </div>
+    </section>
+  </div>
+
+  <div class="project-v2-architecture-legend">
+    <div class="project-v2-architecture-pill">Human approval before action</div>
+    <div class="project-v2-architecture-pill">LLM as advisor, code as authority</div>
+    <div class="project-v2-architecture-pill">ERP first, Outlook second</div>
+  </div>
+</div>

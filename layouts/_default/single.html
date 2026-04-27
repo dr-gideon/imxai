@@ -42,6 +42,8 @@
       {{ replace .Content "<p>THAWNE_SYSTEM_DIAGRAM</p>" (partial "thawne-flow.html" .) | safeHTML }}
     {{ else if eq .Title "DIBNY" }}
       {{ replace .Content "<p>DIBNY_SYSTEM_DIAGRAM</p>" (partial "dibny-flow.html" .) | safeHTML }}
+    {{ else if eq .Title "NORA" }}
+      {{ replace .Content "<p>NORA_SYSTEM_DIAGRAM</p>" (partial "nora-flow.html" .) | safeHTML }}
     {{ else }}
       {{ .Content }}
     {{ end }}

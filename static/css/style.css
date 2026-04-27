@@ -451,8 +451,16 @@ h1 {
   color: #7dd3fc;
 }
 
+.project-status-final-build {
+  color: #fbbf24;
+}
+
 .project-status-live {
   color: #4ade80;
+}
+
+.project-status-demo {
+  color: #c084fc;
 }
 
 .project-name {

@@ -1,6 +1,6 @@
 ---
 title: "ARGUS"
-status: "WORK IN PROGRESS"
+status: "FINAL BUILD STAGE"
 summary: "A retrieval-augmented support assistant"
 year: "2026"
 projectType: "RAG System"
