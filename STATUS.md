@@ -500,3 +500,17 @@
 ### Deployment
 - Not deployed to live.
 - No commit or push performed.
+
+## 2026-05-03 — CULLD stale page redirect
+
+### Current state
+- After deployment commit `93b5220`, the live homepage reflected the new project set, but Cloudflare still served the old `/projects/culld/` asset directly.
+- Added an explicit Cloudflare Pages redirect to keep CULLD out of the project-page surface.
+
+### Completed changes
+- Added `static/_redirects`:
+  - `/projects/culld/ /experiments/ 302`
+  - `/projects/culld /experiments/ 302`
+
+### Rationale
+- CULLD remains represented in the Experiments archive as a suspended project, but should no longer be available as a standalone main project page.
