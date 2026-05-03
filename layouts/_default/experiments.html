@@ -1,0 +1,62 @@
+{{ define "main" }}
+<article class="experiments-page">
+  <header class="experiments-hero">
+    <div>
+      <p class="eyebrow">Scratch archive</p>
+      <h1 class="experiments-title">Experiments</h1>
+      <p class="experiments-hero-copy">A record of the projects that did not become the main thing, but still mattered. Some were scratched. Some were suspended. All of them sharpened the next decision.</p>
+    </div>
+    <aside class="experiments-archive-card" aria-label="Archive summary">
+      <div>
+        <p class="section-kicker">What this page says</p>
+        <p>Not every prototype needs to ship. The useful pattern is visible judgment: explore, test, learn, then cut or pause cleanly when the evidence says no.</p>
+      </div>
+      <div class="experiments-archive-stats">
+        <div class="experiments-archive-stat">
+          <strong>{{ len (index site.Data.experiments.groups 0).items }}</strong>
+          <span>Scratched</span>
+        </div>
+        <div class="experiments-archive-stat">
+          <strong>{{ len (index site.Data.experiments.groups 1).items }}</strong>
+          <span>Suspended</span>
+        </div>
+      </div>
+    </aside>
+  </header>
+
+  {{ range site.Data.experiments.groups }}
+  <section class="experiments-group" aria-labelledby="{{ .title | urlize }}">
+    <div class="section-head section-head-experiments-page">
+      <div>
+        <p class="section-kicker">{{ .kicker }}</p>
+        <h2 id="{{ .title | urlize }}">{{ .title }}</h2>
+      </div>
+      <p class="experiments-intro">{{ .intro }}</p>
+    </div>
+
+    <div class="experiment-grid experiment-grid-page">
+      {{ range $index, $experiment := .items }}
+      <article class="experiment-card">
+        <div class="experiment-top">
+          <div class="experiment-meta">
+            <span class="experiment-number">{{ printf "%02d" (add $index 1) }}</span>
+            <span class="experiment-state">{{ $experiment.status }}</span>
+          </div>
+          <span class="experiment-name">{{ $experiment.name }}</span>
+          <p class="experiment-summary">{{ $experiment.summary }}</p>
+        </div>
+        <div class="experiment-bottom">
+          <p class="experiment-lesson">{{ $experiment.lesson }}</p>
+          <div class="experiment-tags">
+            {{ range $experiment.tags }}
+            <span>{{ . }}</span>
+            {{ end }}
+          </div>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+</article>
+{{ end }}

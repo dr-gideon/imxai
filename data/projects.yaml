@@ -29,20 +29,36 @@ projects:
       ARGUS is a retrieval-augmented support assistant designed around real-world troubleshooting and knowledge retrieval. The project focuses on building a grounded support workflow using curated documents, vector search, and answer generation tied closely to retrieved evidence.
 
       It is also part of a broader effort to deepen practical experience in retrieval pipelines, vector databases, and AI systems that need to be trustworthy in operational environments.
-  - slug: culld
-    name: CULLD
-    status: WORK IN PROGRESS
-    summary: Agent-native recruiting platform designed to help AI systems search, evaluate, and surface talent.
-    impact: Active build focused on AI-era hiring workflows, structured profiles, and recruiter tooling.
+  - slug: grodd
+    name: GRODD
+    status: PLANNING / LOCAL PILOT
+    summary: Installable Peppol submission product for SAP Business One invoices and credit notes, built around a canonical document model.
+    impact: Working local backend and dashboard with SAP B1 SQL Server connector, invoice discovery, canonical mapping, validation, and persisted processing runs.
+    stack:
+      - SAP B1 SQL
+      - Peppol
+      - Canonical Model
+      - Local Dashboard
+      - SQLite
+    body: |
+      GRODD is an installable Peppol submission product designed to sit between source systems and an access point partner. The first connector targets SAP Business One on SQL Server, with Belgium as the initial market context.
+
+      The system keeps customer source data in the source system, maps invoices and credit notes into a canonical model, validates them, and gives operators a local dashboard for document visibility, failure diagnostics, resubmission, and audit trail.
+  - slug: enterpryze-mcp
+    name: Enterpryze MCP
+    status: PUBLIC DEMO READY
+    summary: Hosted MCP server for Enterpryze sales-order workflows, with read tools, analysis tools, guarded create flow, public setup docs, and bearer-protected access.
+    impact: Public company-demo endpoint live behind Cloudflare Tunnel with rate limiting, setup page, 10 MCP tools, server-side Enterpryze auth, preview-first create guardrails, VAT allowlist, and audit logging.
     stack:
       - MCP
-      - AI Matching
-      - Verification Flows
-      - Role-based Access
+      - TypeScript
+      - Fastify
+      - Enterpryze API
+      - Cloudflare Tunnel
     body: |
-      Culld is a recruiting platform built for agent-native workflows. It is designed around the idea that AI systems should be able to search structured talent data, evaluate fit, and support hiring workflows in a more direct way than traditional professional networks.
+      Enterpryze MCP is a hosted MCP server that lets Claude, Codex, and other clients work with Enterpryze sales-order data without exposing Enterpryze credentials to the user machine.
 
-      The project combines profile ingestion, filtering, verification, and matching into a system intended for recruiters, candidates, and companies.
+      It provides read, analysis, and guarded write tools for a test Enterpryze organisation. The public demo uses bearer authentication, rate limiting, explicit create confirmation, validation guardrails, VAT-code allowlisting, and append-only audit logging.
   - slug: thawne
     name: THAWNE
     status: PHASE 4 PLANNED

@@ -273,3 +273,230 @@
 ### Resume point
 - No further live changes are pending from this portfolio pass.
 - Existing untracked preview artifacts remain local and were not included in the deployment.
+
+## 2026-05-03 — Experiments section preview
+
+### Current state
+- Created a preview-only concept for a new portfolio section called `Experiments`.
+- Preview file: `tmp/experiments-preview.html`.
+- Hosted webchat preview copy: `/home/giddy/.openclaw/canvas/documents/imxai-experiments-preview/index.html`.
+- No commit, push, or live deployment was performed.
+
+### Preview content
+- The section is framed as a scratch archive, not a graveyard.
+- Included scratched/archived projects:
+  - TURTLE — Hyperliquid perps trading bot that never went live.
+  - WALLY — iPhone arbitrage deal finder MVP that was archived before deploy.
+  - zOOm — stopped early after existing tools covered enough of the use case.
+  - IRIS — older SAP B1 MCP-first direction superseded by ARGUS.
+  - THE MONITOR — human-AI collaboration portfolio/platform concept archived from active projects.
+- Suggested placement: after `Selected work` and before `About` so the main projects still carry the page.
+
+### Verification
+- Generated standalone HTML preview successfully and copied it into the Control UI canvas preview directory.
+- Confirmed the preview file contains the experiments section and expected archived project names.
+
+### Deployment
+- Not deployed. Waiting for Dr. Wells' review and explicit approval before any live integration.
+
+## 2026-05-03 — Experiments Tailscale preview hosting
+
+### Current state
+- Hosted the standalone `Experiments` preview on Tailscale for review.
+- URL: `http://100.86.180.12:1315/`
+- Served from: `tmp/experiments-preview-host/index.html`
+- Server PID file: `tmp/experiments-preview-host/server.pid`
+- Server log: `tmp/experiments-preview-host/server.log`
+
+### Verification
+- Confirmed the Tailscale URL returns the Experiments preview HTML.
+
+### Deployment
+- Not deployed to live.
+- No commit or push performed.
+- Awaiting Dr. Wells' review and approval before integrating into the Hugo site.
+
+## 2026-05-03 — Experiments integrated into Hugo preview
+
+### Current state
+- Dr. Wells clarified the `Experiments` section should be placed into the existing IM x AI Hugo preview rather than served as a separate standalone page.
+- Integrated `Experiments` into the homepage preview only.
+- Preview URL: `http://100.86.180.12:1314/#experiments`
+- Stopped the separate `1315` standalone preview server.
+
+### Changed files
+- Added `data/experiments.yaml` for scratched-project content.
+- Updated `layouts/index.html` to render the `Experiments` section after `Selected work` and before `About`.
+- Updated `hugo.toml` to add the `Experiments` nav item.
+- Updated `static/css/style.css` with experiment-card layout, responsive behavior, and archive styling.
+
+### Included experiments
+- TURTLE
+- WALLY
+- zOOm
+- IRIS
+- THE MONITOR
+
+### Verification
+- Ran `hugo --minify` successfully. The existing Hugo section-layout warning remains unchanged.
+- Started Hugo preview on Tailscale port `1314`.
+- Verified via curl that the preview homepage contains `id="experiments"`, `THE MONITOR`, and the `/#experiments` nav anchor.
+
+### Deployment
+- Not deployed to live.
+- No commit or push performed.
+- Awaiting Dr. Wells' review and approval before any live deployment.
+
+## 2026-05-03 — Experiments moved to separate preview page
+
+### Current state
+- Dr. Wells asked to remove `Experiments` from the landing page body, keep it in the navigation, move it to a separate page, and include suspended projects.
+- Preview URL: `http://100.86.180.12:1314/experiments/`
+- The landing page nav now links to `/experiments/`.
+- The landing page body no longer contains the Experiments section.
+
+### Changed files
+- Added `content/experiments.md` with layout `experiments`.
+- Added `layouts/_default/experiments.html` for the standalone archive page.
+- Reworked `data/experiments.yaml` into grouped content:
+  - Scratched experiments
+  - Suspended or paused projects
+- Updated `layouts/index.html` to remove the landing-page Experiments section.
+- Updated `hugo.toml` so the nav points to `/experiments/`.
+- Updated `static/css/style.css` for the standalone Experiments page layout.
+
+### Included projects
+- Scratched: TURTLE, WALLY, zOOm, IRIS, THE MONITOR.
+- Suspended/paused: HUNTER / CULLD, CISCO, VIBE.
+
+### Verification
+- Ran `hugo --minify` successfully. The existing Hugo section-layout warning remains unchanged.
+- Restarted the Tailscale Hugo preview on port `1314`.
+- Verified via curl:
+  - Homepage nav contains `/experiments/`.
+  - Homepage no longer contains `id="experiments"`.
+  - `/experiments/` contains `HUNTER / CULLD`, `CISCO`, and `THE MONITOR`.
+
+### Deployment
+- Not deployed to live.
+- No commit or push performed.
+- Awaiting Dr. Wells' review and approval before any live deployment.
+
+## 2026-05-03 — CULLD removed, GRODD and EnterpryzeMCP added to preview
+
+### Current state
+- Dr. Wells approved the Experiments preview direction and asked to update the main project portfolio set.
+- Removed CULLD from the homepage project cards and removed its project page from the preview source.
+- Added GRODD and EnterpryzeMCP to the homepage project cards and project pages.
+- Preview URL: `http://100.86.180.12:1314/`
+
+### Changed files
+- Updated `data/projects.yaml`:
+  - removed `culld`
+  - added `grodd`
+  - added `enterpryzemcp`
+- Added `content/projects/grodd.md`.
+- Added `content/projects/enterpryzemcp.md`.
+- Moved `content/projects/culld.md` to `.trash/2026-05-03-culld-portfolio-removal/culld.md` instead of deleting it outright.
+- Updated `layouts/index.html` with status classes for the new project states.
+- Updated `static/css/style.css` with styling for:
+  - `PLANNING / LOCAL PILOT`
+  - `PUBLIC DEMO READY`
+
+### Project summaries added
+- GRODD: installable Peppol submission product for SAP Business One invoices and credit notes, built around a canonical document model, local backend, dashboard, SAP B1 SQL connector, validation, and persisted processing runs.
+- EnterpryzeMCP: hosted MCP server for Enterpryze sales-order workflows, with public setup docs, bearer-protected MCP endpoint, read/analysis tools, guarded create flow, VAT allowlist, audit logging, and Cloudflare Tunnel.
+
+### Verification
+- Ran `hugo --minify --cleanDestinationDir` successfully. The existing Hugo section-layout warning remains unchanged.
+- Restarted the Tailscale Hugo preview on port `1314`.
+- Verified via curl:
+  - Homepage links `/projects/grodd/`.
+  - Homepage links `/projects/enterpryzemcp/`.
+  - Homepage no longer links `/projects/culld/`.
+  - `/projects/grodd/` renders.
+  - `/projects/enterpryzemcp/` renders.
+  - `/projects/culld/` returns 404 after stale generated output was cleaned.
+
+### Deployment
+- Not deployed to live.
+- No commit or push performed.
+- Awaiting Dr. Wells' review and explicit approval before live deployment.
+
+## 2026-05-03 — GRODD and Enterpryze MCP preview polish
+
+### Current state
+- Applied Dr. Wells' requested visual fixes to the preview only.
+- Preview URL: `http://100.86.180.12:1314/`
+- Enterpryze MCP page URL is now `http://100.86.180.12:1314/projects/enterpryze-mcp/`.
+
+### Completed changes
+- Changed `EnterpryzeMCP` to `Enterpryze MCP` on:
+  - homepage project card
+  - project page title
+  - project page body references where appropriate
+- Updated the homepage card slug/link from `/projects/enterpryzemcp/` to `/projects/enterpryze-mcp/` to match the spaced page title.
+- Added extra hero spacing between the Enterpryze MCP title and support/tagline line.
+- Matched new project-page scroll cue colors to homepage status pills:
+  - GRODD: blue, matching `PLANNING / LOCAL PILOT`
+  - Enterpryze MCP: purple, matching `PUBLIC DEMO READY`
+
+### Verification
+- Ran `hugo --minify --cleanDestinationDir` successfully. Existing Hugo section-layout warning remains unchanged.
+- Restarted the Tailscale Hugo preview on port `1314`.
+- Verified via curl:
+  - Homepage shows `Enterpryze MCP`.
+  - Homepage links `/projects/enterpryze-mcp/`.
+  - Homepage no longer contains `EnterpryzeMCP`.
+  - Enterpryze MCP project page renders with `<h1 class="project-v2-title">Enterpryze MCP</h1>`.
+  - GRODD and Enterpryze MCP project pages have the expected page classes for scroll-cue styling.
+
+### Deployment
+- Not deployed to live.
+- No commit or push performed.
+
+## 2026-05-03 — Enterpryze MCP hero spacing and scroll cue correction
+
+### Current state
+- Dr. Wells reported that only the Enterpryze MCP name spacing was visibly fixed; the hero support-line spacing and scroll cue colors were still wrong.
+
+### Completed changes
+- Increased Enterpryze MCP hero title/support-line separation more aggressively:
+  - project-specific title/tagline gap set to `86px`
+  - title size reduced slightly on that page to prevent overlap
+  - title layer nudged upward
+- Matched the full scroll cue treatment, not only the animated line:
+  - GRODD cue text/track/animated line now uses the blue status color family
+  - Enterpryze MCP cue text/track/animated line now uses the purple status color family
+- Added a cache-busting query string to `project-page-v2.css` in `baseof.html` so the preview browser loads the updated CSS.
+
+### Verification
+- Rebuilt with `hugo --minify --cleanDestinationDir` successfully. Existing section-layout warning remains unchanged.
+- Restarted the Tailscale Hugo preview.
+- Verified the Enterpryze MCP page includes the cache-busted project stylesheet and the served CSS includes the updated spacing and scroll cue rules.
+
+### Deployment
+- Not deployed to live.
+- No commit or push performed.
+
+## 2026-05-03 — Scroll cue neutral text correction
+
+### Current state
+- Dr. Wells clarified the scroll cue label/track should remain neutral like the other project pages; only the running animated line should use the project status color.
+
+### Completed changes
+- Removed project-specific scroll cue text/track color overrides for:
+  - GRODD
+  - Enterpryze MCP
+- Kept only the project-specific animated running-line color overrides:
+  - GRODD blue
+  - Enterpryze MCP purple
+
+### Verification
+- Rebuilt with `hugo --minify --cleanDestinationDir` successfully. Existing section-layout warning remains unchanged.
+- Restarted the Tailscale Hugo preview.
+- Verified served CSS still includes the project-specific `scroll-cue-line::after` colors and no longer includes project-specific `.project-v2-scroll-cue` text/track overrides for GRODD or Enterpryze MCP.
+
+### Deployment
+- Not deployed to live.
+- No commit or push performed.

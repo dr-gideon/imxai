@@ -1,0 +1,91 @@
+groups:
+  - title: Scratched experiments
+    kicker: Cut cleanly
+    intro: >-
+      Projects that were explored, built, or validated far enough to teach something useful, then deliberately stopped.
+    items:
+      - name: TURTLE
+        status: Scratched
+        summary: >-
+          Hyperliquid perpetuals trading bot explored as a systematic crypto execution project. It reached strategy and implementation work, but never went live.
+        lesson: >-
+          Automated trading needs evidence, monitoring, and risk controls before ambition.
+        tags:
+          - Trading
+          - Automation
+          - Risk
+      - name: WALLY
+        status: MVP archived
+        summary: >-
+          iPhone arbitrage deal finder built to spot resale opportunities and surface profitable listings. The MVP worked, but was not worth pushing into deployment.
+        lesson: >-
+          It clarified the difference between a clever scraper and a durable product with repeatable edge.
+        tags:
+          - Market data
+          - Scraping
+          - Arbitrage
+      - name: zOOm
+        status: Stopped early
+        summary: >-
+          Meeting and productivity idea investigated before build momentum took over. Existing tools already solved enough of the problem.
+        lesson: >-
+          The best engineering decision was not to build. Research beat sunk cost.
+        tags:
+          - Validation
+          - Workflow
+          - Product judgment
+      - name: IRIS
+        status: Superseded
+        summary: >-
+          Early SAP Business One MCP-first direction that helped shape thinking around ERP-connected agents before ARGUS became the stronger path.
+        lesson: >-
+          The idea did not disappear. It got absorbed into stronger patterns around support, retrieval, and business-system context.
+        tags:
+          - ERP
+          - MCP
+          - Agent tooling
+      - name: THE MONITOR
+        status: Archived
+        summary: >-
+          Human-AI collaboration portfolio platform that explored how to make process, iteration, and agent collaboration visible as proof of work.
+        lesson: >-
+          Parts of the thesis survived here: the portfolio should show judgment and collaboration, not just finished screenshots.
+        tags:
+          - Portfolio
+          - AI collaboration
+          - Proof of work
+  - title: Suspended or paused projects
+    kicker: Held deliberately
+    intro: >-
+      Projects that were real enough to preserve, but not right to keep active right now.
+    items:
+      - name: HUNTER / CULLD
+        status: Suspended
+        summary: >-
+          Agent-native recruiting MCP server and portal concept for candidates, recruiters, companies, and academic institutions. Built around structured profiles, verification, and AI-assisted matching.
+        lesson: >-
+          The matching and verification ideas were strong, but the hackathon push was cancelled and focus moved back to higher-priority work.
+        tags:
+          - Recruiting
+          - MCP
+          - Verification
+      - name: CISCO
+        status: Paused
+        summary: >-
+          Polymarket BTC 15-minute Up/Down trading bot that ran live for roughly a week before being paused with data preserved.
+        lesson: >-
+          Live trading systems need stronger strategy evidence, monitoring, and operational confidence before they deserve more capital or attention.
+        tags:
+          - Polymarket
+          - Trading bot
+          - Live test
+      - name: VIBE
+        status: Paused
+        summary: >-
+          Polymarket BTC 5-minute trading bot explored as a faster market variant after CISCO. Services were stopped and the data was preserved.
+        lesson: >-
+          Faster markets do not automatically mean better opportunity. The shorter loop increased noise and reinforced the need for stricter validation.
+        tags:
+          - Polymarket
+          - Short timeframe
+          - Paper trading
