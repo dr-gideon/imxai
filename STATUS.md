@@ -514,3 +514,23 @@
 
 ### Rationale
 - CULLD remains represented in the Experiments archive as a suspended project, but should no longer be available as a standalone main project page.
+
+## 2026-05-03 — Portfolio refresh deployed
+
+### Deployment
+- Dr. Wells approved the preview and gave the magic phrase.
+- Final build passed with `hugo --minify --cleanDestinationDir`; existing section-layout warning remains unchanged.
+- Committed and pushed:
+  - `93b5220` — `Refresh portfolio projects and experiments`
+  - `b393950` — `Redirect removed CULLD project page`
+
+### Live verification
+- Verified live homepage contains `Enterpryze MCP` and the `/experiments/` nav link.
+- Verified `/experiments/` returns HTTP 200.
+- Verified `/projects/grodd/` returns HTTP 200.
+- Verified `/projects/enterpryze-mcp/` returns HTTP 200.
+- Verified `/projects/culld/` returns HTTP 302 to `/experiments/`.
+
+### Live state
+- Main projects now include NORA, ARGUS, GRODD, Enterpryze MCP, THAWNE, and DIBNY.
+- CULLD is removed from the main project cards/pages and represented in the Experiments archive instead.
