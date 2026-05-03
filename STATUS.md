@@ -534,3 +534,42 @@
 ### Live state
 - Main projects now include NORA, ARGUS, GRODD, Enterpryze MCP, THAWNE, and DIBNY.
 - CULLD is removed from the main project cards/pages and represented in the Experiments archive instead.
+
+## 2026-05-03 — Final confirmation
+
+### Confirmation
+- Dr. Wells reviewed the live portfolio update and confirmed everything is good.
+
+### Final live state
+- Homepage main project cards:
+  - NORA
+  - ARGUS
+  - GRODD
+  - Enterpryze MCP
+  - THAWNE
+  - DIBNY
+- Separate Experiments page is live at `/experiments/`.
+- CULLD is removed from the main project cards and standalone project-page surface.
+- `/projects/culld/` redirects to `/experiments/`.
+- Experiments includes scratched, suspended, and paused projects:
+  - TURTLE
+  - WALLY
+  - zOOm
+  - IRIS
+  - THE MONITOR
+  - HUNTER / CULLD
+  - CISCO
+  - VIBE
+
+### Latest pushed commits
+- `93b5220` — `Refresh portfolio projects and experiments`
+- `b393950` — `Redirect removed CULLD project page`
+- `ebdf13d` — `Log portfolio refresh deployment`
+
+### Notes for next session
+- No further IM x AI deployment work is pending from this pass.
+- Local untracked preview/old artifacts remain intentionally uncommitted:
+  - `.trash/`
+  - `layouts/shortcodes/`
+  - old static diagram preview files
+  - `tmp/`
