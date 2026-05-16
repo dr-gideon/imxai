@@ -1015,3 +1015,31 @@
 - Updated Experiments page typography/copy treatment.
 - Updated project-page title typography across project pages while preserving NORA's wordmark.
 - Removed private IP exposure from public-facing page copy and verified no literal private IP/direct-IP URLs remain in generated/source public paths.
+
+## 2026-05-16 — End-of-session handoff after live portfolio deploy
+
+### Current state
+- IM x AI portfolio refresh is live and pushed.
+- Latest pushed commit: `00a6cde` (`Log IM x AI portfolio deployment`).
+- Main portfolio change commit: `f365158` (`Refresh IM x AI portfolio`).
+- Live site verified at `https://imxai.xyz/`.
+
+### Live verification completed
+- Homepage verified with `RAG + knowledge systems` in the capability strip.
+- NORA page verified with the roadmap text `Six-month learning window`.
+- POC App page verified with screenshot section text `Fetch Document`.
+- Experiments page verified with hero text `Projects that sharpened the work.`.
+- Pre-deploy scan found no literal private IP/direct-IP URLs in public/source paths.
+
+### Important local state for next session
+- Git working tree is clean for tracked files after push.
+- Remaining untracked paths are local scratch/backups only and were intentionally not committed:
+  - `.trash/`
+  - `backups/`
+  - `layouts/shortcodes/`
+  - old untracked static preview helpers: `static/argus-flow-*.html`, `static/culld-flow-*.html`
+  - `tmp/`
+- Do not treat those untracked paths as deployment blockers unless Dr. Wells asks to clean the repo.
+
+### Final note
+- Preview-first workflow completed correctly: Dr. Wells reviewed, approved, gave `run barry run`, then deployment happened.
