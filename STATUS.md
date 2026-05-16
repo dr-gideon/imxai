@@ -985,3 +985,33 @@
 ### Deployment
 - Not deployed to live.
 - No commit or push performed.
+
+## 2026-05-16 — Portfolio refresh live deployment
+
+### Deployment
+- Dr. Wells approved the IM x AI preview state and gave the magic phrase: `run barry run`.
+- Ran final verification before deployment:
+  - `hugo --minify --cleanDestinationDir`;
+  - HTML parser checks for homepage, Experiments, NORA, POC App, ARGUS, and Enterpryze MCP;
+  - `node --check static/marquee.js`;
+  - `git diff --check`;
+  - generated-content checks for `RAG + knowledge systems`, `Projects that sharpened the work.`, `NORA`, `Fetch Document`, and `Six-month learning window`;
+  - source/generated scan for literal private IP or direct-IP URLs across `public`, `content`, `data`, `layouts`, and `static`.
+- Committed and pushed approved portfolio changes to `main`.
+- Commit: `f365158` (`Refresh IM x AI portfolio`).
+
+### Live result
+- Verified Cloudflare Pages/live site updated successfully at `https://imxai.xyz/`.
+- Live checks passed for:
+  - homepage capability strip containing `RAG + knowledge systems`;
+  - NORA roadmap containing `Six-month learning window`;
+  - POC App screenshots section containing `Fetch Document`;
+  - Experiments page hero containing `Projects that sharpened the work.`
+
+### Included changes
+- Added POC App project page, project card, system diagram, and screenshots.
+- Updated NORA positioning, screenshots, roadmap, wordmark hero, and architecture/current-state copy.
+- Updated homepage project cards, hero typography, capability strip, and project-card typography.
+- Updated Experiments page typography/copy treatment.
+- Updated project-page title typography across project pages while preserving NORA's wordmark.
+- Removed private IP exposure from public-facing page copy and verified no literal private IP/direct-IP URLs remain in generated/source public paths.
