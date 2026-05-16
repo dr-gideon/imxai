@@ -773,3 +773,483 @@
 .project-page-v2-enterpryze-mcp .project-v2-tagline {
   margin-top: 0;
 }
+
+.project-page-v2-poc-app .project-v2-scroll-cue-line::after {
+  background: #fb923c;
+  box-shadow: 0 0 10px rgba(251, 146, 60, 0.35);
+}
+
+.project-v2-content .project-v2-architecture-layer-core-poc-app {
+  border-color: rgba(251, 146, 60, 0.2);
+  background: linear-gradient(180deg, rgba(251, 146, 60, 0.038), rgba(255,255,255,0.014));
+  box-shadow: inset 0 0 0 1px rgba(251, 146, 60, 0.045);
+}
+
+.project-v2-content .project-v2-architecture-layer-core-poc-app .project-v2-architecture-cell {
+  border-color: rgba(251, 146, 60, 0.13);
+  background: rgba(251, 146, 60, 0.026);
+}
+
+/* Preview: compact wide project case-study pages */
+.project-page-v2 {
+  --project-wide: 1320px;
+}
+
+.project-v2-hero-compact {
+  min-height: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(380px, 0.54fr);
+  gap: 72px;
+  align-items: end;
+  margin: 0;
+  padding: 76px 0 58px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.project-v2-hero-compact .project-v2-hero-copy {
+  max-width: 900px;
+}
+
+.project-v2-kicker-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.project-v2-kicker-row span {
+  color: rgba(245,245,242,0.58);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 6px 9px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.018);
+}
+
+.project-v2-hero-compact .project-v2-title {
+  width: auto;
+  margin: 0;
+  font-size: clamp(4.8rem, 12vw, 9.4rem);
+  line-height: 0.86;
+  text-align: left;
+  text-wrap: balance;
+}
+
+.project-v2-hero-compact .project-v2-tagline {
+  max-width: 780px;
+  margin: 30px 0 0;
+  color: rgba(245,245,242,0.76);
+  font-size: clamp(1.06rem, 1.35vw, 1.28rem);
+  line-height: 1.55;
+  text-align: left;
+  white-space: normal;
+}
+
+.project-v2-hero-compact .project-v2-facts {
+  position: static;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-self: end;
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.012));
+}
+
+.project-v2-hero-compact .project-v2-fact:nth-child(2n) {
+  border-right: none;
+}
+
+.project-v2-hero-compact .project-v2-fact:nth-child(n + 3) {
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.project-v2-content {
+  width: min(var(--project-wide), 100%);
+  max-width: none;
+  margin: 0;
+  padding-top: 64px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.project-v2-content .project-v2-intro {
+  width: min(1040px, 100%);
+  max-width: none;
+  color: rgba(245,245,242,0.82);
+  font-size: clamp(1.08rem, 1.4vw, 1.28rem);
+  line-height: 1.68;
+}
+
+.project-v2-content p,
+.project-v2-content ul,
+.project-v2-content blockquote,
+.project-v2-content .project-v2-callout,
+.project-v2-content .project-v2-grid {
+  max-width: 980px;
+}
+
+.project-v2-content > h2 {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 48px;
+  align-items: start;
+  width: 100%;
+  margin-bottom: 22px;
+  white-space: normal;
+  text-wrap: balance;
+}
+
+.project-v2-content > h2 + p,
+.project-v2-content > h2 + ul,
+.project-v2-content > h2 + .project-v2-architecture-diagram,
+.project-v2-content > h2 + .project-v2-sequence-diagram {
+  margin-top: 0;
+}
+
+.project-v2-content > * + h2 {
+  margin-top: 78px;
+  padding-top: 46px;
+}
+
+.project-v2-content > * + h2::before {
+  left: 0;
+  width: 100%;
+}
+
+.project-v2-content h2::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin-top: 0.7em;
+  background: rgba(255,255,255,0.12);
+}
+
+.project-v2-content p,
+.project-v2-content li {
+  font-size: 1.06rem;
+  line-height: 1.76;
+}
+
+.project-v2-content .project-v2-architecture-diagram,
+.project-v2-content .project-v2-sequence-diagram {
+  width: 100%;
+  max-width: none;
+}
+
+.project-v2-content .project-v2-sequence-actors,
+.project-v2-content .project-v2-sequence-steps,
+.project-v2-content .project-v2-sequence-lifelines,
+.project-v2-content .project-v2-sequence-trust {
+  min-width: 1040px;
+}
+
+.project-page-v2-enterpryze-mcp .project-v2-hero-compact .project-v2-title {
+  font-size: clamp(4.4rem, 10vw, 8.4rem);
+}
+
+@media (max-width: 1100px) {
+  .project-v2-hero-compact {
+    grid-template-columns: 1fr;
+    gap: 34px;
+    padding-top: 54px;
+  }
+
+  .project-v2-hero-compact .project-v2-facts {
+    width: 100%;
+  }
+
+  .project-v2-content > h2 {
+    display: block;
+  }
+
+  .project-v2-content h2::after {
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 900px) {
+  .project-v2-hero-compact .project-v2-title-layer,
+  .project-v2-hero-compact .project-v2-scroll-cue,
+  .project-v2-hero-compact .project-v2-facts {
+    position: static;
+    transform: none;
+  }
+
+  .project-v2-hero-compact .project-v2-title {
+    font-size: clamp(4.2rem, 18vw, 7rem);
+  }
+
+  .project-v2-content {
+    padding-top: 42px;
+  }
+}
+
+@media (max-width: 640px) {
+  .project-v2-hero-compact {
+    padding-top: 36px;
+    padding-bottom: 38px;
+  }
+
+  .project-v2-kicker-row span {
+    font-size: 0.64rem;
+  }
+
+  .project-v2-hero-compact .project-v2-facts {
+    grid-template-columns: 1fr;
+  }
+
+  .project-v2-hero-compact .project-v2-fact,
+  .project-v2-hero-compact .project-v2-fact:nth-child(2n) {
+    border-right: none;
+  }
+
+  .project-v2-hero-compact .project-v2-fact:nth-child(n + 2) {
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+}
+
+/* Preview polish: reduce title drama and widen reading measure */
+.project-v2-hero-compact .project-v2-title {
+  font-size: clamp(3.8rem, 9vw, 7.2rem);
+}
+
+.project-page-v2-enterpryze-mcp .project-v2-hero-compact .project-v2-title {
+  font-size: clamp(3.4rem, 8vw, 6.4rem);
+}
+
+.project-v2-content .project-v2-intro,
+.project-v2-content p,
+.project-v2-content ul,
+.project-v2-content blockquote,
+.project-v2-content .project-v2-callout,
+.project-v2-content .project-v2-grid {
+  max-width: 1160px;
+}
+
+/* Preview quick pass: keep project section titles on one line when space allows */
+.project-v2-content > h2 {
+  grid-template-columns: minmax(320px, auto) minmax(0, 1fr);
+  column-gap: 42px;
+  white-space: nowrap;
+  text-wrap: nowrap;
+}
+
+@media (max-width: 1100px) {
+  .project-v2-content > h2 {
+    white-space: normal;
+    text-wrap: balance;
+  }
+}
+
+/* Preview: NORA screenshots + roadmap */
+.project-v2-content .project-v2-screenshot-grid {
+  width: 100%;
+  max-width: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin: 28px 0 34px;
+}
+
+.project-v2-content .project-v2-screenshot-card {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(192,132,252,0.045), rgba(255,255,255,0.014));
+  box-shadow: 0 22px 60px rgba(0,0,0,0.22);
+}
+
+.project-v2-content .project-v2-screenshot-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.project-v2-content .project-v2-screenshot-card figcaption {
+  display: grid;
+  gap: 6px;
+  padding: 18px 20px 20px;
+}
+
+.project-v2-content .project-v2-screenshot-card figcaption strong {
+  color: var(--project-text);
+  font-size: 0.88rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.project-v2-content .project-v2-screenshot-card figcaption span {
+  color: rgba(245,245,242,0.68);
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+
+.project-v2-content .project-v2-roadmap {
+  position: relative;
+  width: 100%;
+  max-width: none;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+  margin: 28px 0 28px;
+}
+
+.project-v2-content .project-v2-roadmap::before {
+  content: '';
+  position: absolute;
+  left: 7%;
+  right: 7%;
+  top: 28px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(192,132,252,0.18), rgba(236,72,153,0.44), rgba(192,132,252,0.18));
+  pointer-events: none;
+}
+
+.project-v2-content .project-v2-roadmap-phase {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 18px;
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 22px;
+  background: rgba(255,255,255,0.018);
+}
+
+.project-v2-content .project-v2-roadmap-phase-target {
+  border-color: rgba(236,72,153,0.24);
+  background: linear-gradient(180deg, rgba(236,72,153,0.07), rgba(255,255,255,0.016));
+}
+
+.project-v2-content .project-v2-roadmap-step {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 28px;
+  margin-bottom: 18px;
+  padding: 6px 10px;
+  border: 1px solid rgba(236,72,153,0.28);
+  border-radius: 999px;
+  background: rgba(236,72,153,0.12);
+  color: rgba(245,245,242,0.86);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.project-v2-content .project-v2-roadmap h3 {
+  margin: 0 0 10px;
+  color: var(--project-text);
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  line-height: 1.35;
+}
+
+.project-v2-content .project-v2-roadmap p {
+  margin: 0;
+  color: rgba(245,245,242,0.66);
+  font-size: 0.9rem;
+  line-height: 1.58;
+}
+
+@media (max-width: 1180px) {
+  .project-v2-content .project-v2-roadmap {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .project-v2-content .project-v2-roadmap-phase-target {
+    grid-column: 1 / -1;
+  }
+
+  .project-v2-content .project-v2-roadmap::before {
+    display: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .project-v2-content .project-v2-screenshot-grid,
+  .project-v2-content .project-v2-roadmap {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Preview polish: NORA roadmap reads cleaner as cards without a connector line */
+.project-v2-content .project-v2-roadmap::before {
+  display: none;
+}
+
+/* Preview: NORA hero uses product wordmark */
+.project-v2-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.project-page-v2-nora .project-v2-title-logo {
+  display: block;
+  width: min(520px, 52vw);
+  margin: -18px 0 -4px;
+  line-height: 1;
+}
+
+.project-page-v2-nora .project-v2-title-logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0 22px rgba(236, 72, 153, 0.2));
+}
+
+@media (max-width: 900px) {
+  .project-page-v2-nora .project-v2-title-logo {
+    width: min(390px, 82vw);
+    margin-top: -8px;
+  }
+}
+
+/* Preview: POC App screenshots use the product accent */
+.project-v2-content .project-v2-screenshot-grid-poc-app .project-v2-screenshot-card {
+  background: linear-gradient(180deg, rgba(251,146,60,0.052), rgba(255,255,255,0.014));
+}
+
+.project-v2-content .project-v2-screenshot-grid-poc-app .project-v2-screenshot-card-portrait {
+  max-width: 760px;
+}
+
+@media (min-width: 761px) {
+  .project-v2-content .project-v2-screenshot-grid-poc-app .project-v2-screenshot-card-portrait {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: min(760px, 100%);
+  }
+}
+
+/* Preview: project-page hero titles move to product/studio typography, except NORA wordmark */
+.project-v2-hero-compact .project-v2-title:not(.project-v2-title-logo) {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.065em;
+  font-size: clamp(3.4rem, 7.2vw, 6.4rem);
+  line-height: 0.92;
+}
+
+.project-page-v2-enterpryze-mcp .project-v2-hero-compact .project-v2-title:not(.project-v2-title-logo) {
+  font-size: clamp(3rem, 6vw, 5.6rem);
+}
+
+@media (max-width: 900px) {
+  .project-v2-hero-compact .project-v2-title:not(.project-v2-title-logo) {
+    font-size: clamp(3.2rem, 14vw, 5.8rem);
+  }
+}

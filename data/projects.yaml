@@ -1,19 +1,34 @@
 projects:
   - slug: nora
     name: NORA
-    status: LIVE INTERNAL PILOT
-    summary: AI-assisted support inbox copilot for Outlook-to-ERP service-call logging, rota visibility, approval, and controlled execution.
-    impact: Live internal pilot wiring across test Outlook, test ERP, consultant availability, LLM-assisted interpretation, and portal approval controls.
+    status: PRODUCTION STAGING
+    summary: AI-assisted support operations system for Outlook-to-ERP logging, AWS-routed email understanding, My Calls, Team Chat, Knowledge Library, admin settings, and controlled execution.
+    impact: Production-intended staging covers AWS-only LLM routing with privacy gate, Postgres-backed state, Work Queue, My Calls, Team Chat, Knowledge Library/Candidates, consultant mappings, access control, and full system controls.
     stack:
       - Outlook
       - ERP API
-      - Workflow Automation
+      - Postgres
       - LLM Advisory
       - Portal UI
     body: |
       NORA is an internal support workflow copilot designed to automate repeatable service-call logging and email-routing work for a small support team. It classifies whether an email should create a service call, update an existing one, trigger a reassignment, move to manual review, or require no action.
 
-      The system brings logging, Outlook folder movement, consultant availability, rota visibility, approval, and execution into one controlled operational surface.
+      The system now includes a production-intended operator/admin portal direction: shared Work Queue and Knowledge surfaces, My Calls, ephemeral Team Chat, role-specific Home and Settings, access management, consultant mappings, Knowledge Library/Candidates, and high-sensitivity system controls around live execution, mailbox intake, AWS LLM routing, privacy gates, and office hours.
+  - slug: poc-app
+    name: POC App
+    status: LIVE PRIVATE PILOT
+    summary: Warehouse proof-of-collection app for SAP Business One supplier returns, with digital courier signatures, signed PDF generation, and SAP UDF writeback.
+    impact: Private trusted-network service live against SAP demo data with PIN auth, SQL Server persistence, Service Layer lookup/writeback, one-page proof PDFs, and operational status checks.
+    stack:
+      - SAP B1 Service Layer
+      - SQL Server
+      - TypeScript
+      - Fastify
+      - PDFKit
+    body: |
+      POC App is a focused warehouse tool for supplier returns. A warehouse user looks up an A/P Credit Note, captures the courier signature on a warehouse device, generates a proof-of-collection PDF, and writes the proof link back to SAP.
+
+      It is deliberately narrow: private access, shared warehouse PIN, SAP-backed lookup, local proof storage, and a clean proof reference visible from the SAP document.
   - slug: argus
     name: ARGUS
     status: FINAL BUILD STAGE

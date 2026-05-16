@@ -1,0 +1,59 @@
+<div class="project-v2-architecture-diagram" aria-label="POC App warehouse proof-of-collection system diagram">
+  <div class="project-v2-architecture-stack">
+    <section class="project-v2-architecture-layer">
+      <div class="project-v2-architecture-header">
+        <h3 class="project-v2-architecture-title">Warehouse Layer</h3>
+        <div class="project-v2-architecture-note">where proof is captured</div>
+      </div>
+      <div class="project-v2-architecture-grid project-v2-architecture-grid-4">
+        <div class="project-v2-architecture-cell"><strong>Warehouse Device</strong>private trusted-network access with shared PIN authentication</div>
+        <div class="project-v2-architecture-cell"><strong>Credit Note Lookup</strong>operator enters the SAP A/P Credit Note number</div>
+        <div class="project-v2-architecture-cell"><strong>Courier Signature</strong>driver signs directly on the device before collection leaves</div>
+        <div class="project-v2-architecture-cell"><strong>Signed Status</strong>app shows proof captured, PDF link, totals, and SAP writeback state</div>
+      </div>
+    </section>
+
+    <section class="project-v2-architecture-layer project-v2-architecture-layer-core-poc-app">
+      <div class="project-v2-architecture-header">
+        <h3 class="project-v2-architecture-title">Application Layer</h3>
+        <div class="project-v2-architecture-note">how the workflow is controlled</div>
+      </div>
+      <div class="project-v2-architecture-grid project-v2-architecture-grid-4">
+        <div class="project-v2-architecture-cell"><strong>Fastify App</strong>typed routes for lookup, document view, signature submission, and status</div>
+        <div class="project-v2-architecture-cell"><strong>Domain Model</strong>normalizes document header, lines, totals, driver, signature, and proof URL</div>
+        <div class="project-v2-architecture-cell"><strong>PDF Generator</strong>creates a one-page proof-of-collection document</div>
+        <div class="project-v2-architecture-cell"><strong>Status Checks</strong>health page verifies SQL, SAP login, AP Credit Note visibility, and PDF storage</div>
+      </div>
+    </section>
+
+    <section class="project-v2-architecture-layer project-v2-architecture-layer-core-poc-app">
+      <div class="project-v2-architecture-header">
+        <h3 class="project-v2-architecture-title">SAP + Data Layer</h3>
+        <div class="project-v2-architecture-note">where proof becomes operational record</div>
+      </div>
+      <div class="project-v2-architecture-grid project-v2-architecture-grid-3">
+        <div class="project-v2-architecture-cell"><strong>SAP Service Layer</strong>reads A/P Credit Notes and updates proof UDFs</div>
+        <div class="project-v2-architecture-cell"><strong>SQL Server</strong>stores app-owned document snapshots, lines, status, and signed metadata</div>
+        <div class="project-v2-architecture-cell"><strong>PDF Storage</strong>keeps generated proof files and exposes internal URLs</div>
+      </div>
+    </section>
+
+    <section class="project-v2-architecture-layer">
+      <div class="project-v2-architecture-header">
+        <h3 class="project-v2-architecture-title">Output Layer</h3>
+        <div class="project-v2-architecture-note">what the business gets back</div>
+      </div>
+      <div class="project-v2-architecture-grid project-v2-architecture-grid-3">
+        <div class="project-v2-architecture-cell"><strong>Signed PDF</strong>supplier, AP credit number, returned items, totals, driver, and signature</div>
+        <div class="project-v2-architecture-cell"><strong>SAP UDFs</strong>driver, signed date, and clickable proof URL written back to the credit note</div>
+        <div class="project-v2-architecture-cell"><strong>Audit Trail</strong>local signed state and SAP update errors remain visible for operators</div>
+      </div>
+    </section>
+  </div>
+
+  <div class="project-v2-architecture-legend">
+    <div class="project-v2-architecture-pill">Warehouse-first UI</div>
+    <div class="project-v2-architecture-pill">SAP stays the record surface</div>
+    <div class="project-v2-architecture-pill">Proof captured once</div>
+  </div>
+</div>

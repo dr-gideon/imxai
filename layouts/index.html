@@ -3,83 +3,27 @@
   <div class="hero-copy reveal-slide">
     <p class="eyebrow">{{ site.Params.role }}</p>
     <h1 class="hero-name hero-name-large">{{ site.Params.name }}</h1>
-    <p class="hero-trust-line">8+ years working across SAP Business One, reporting systems, data workflows, and AI-assisted product development.</p>
+    <p class="hero-positioning">Building practical AI systems for operations, automation, and agent-native workflows.</p>
+    <p class="hero-trust-line">Portfolio of internal tools, MCP servers, support automation systems, and AI-assisted product experiments grounded in SAP, ERP, data workflows, and real operational constraints.</p>
+    <div class="hero-actions" aria-label="Homepage actions">
+      <a class="button button-primary" href="#projects">View projects</a>
+      <a class="button button-secondary" href="#about">About the work</a>
+    </div>
     <div class="hero-facts">
       <span class="availability-pill">Open to roles</span>
       <span>{{ site.Params.location }}</span>
     </div>
-    <div class="scroll-cue" aria-hidden="true">
-      <span class="scroll-cue-line"></span>
-      <span class="scroll-cue-text">SCROLL</span>
-    </div>
   </div>
 </section>
 
-<section class="skills-ribbon" aria-label="Key skills">
-  <div class="skills-marquee">
-    <div class="skills-track">
-      <div class="skills-group">
-        <span>LLM Engineering</span>
-        <span>•</span>
-        <span>Agentic AI</span>
-        <span>•</span>
-        <span>RAG</span>
-        <span>•</span>
-        <span>Workflow Automation</span>
-        <span>•</span>
-        <span>MCP</span>
-        <span>•</span>
-        <span>Prompt Engineering</span>
-        <span>•</span>
-        <span>Product Prototyping</span>
-        <span>•</span>
-        <span>AI Tooling</span>
-        <span>•</span>
-        <span>Systems Design</span>
-        <span>•</span>
-        <span>ERP</span>
-        <span>•</span>
-        <span>Data Engineering</span>
-        <span>•</span>
-        <span>Support Workflows</span>
-        <span>•</span>
-        <span>API Integrations</span>
-        <span>•</span>
-        <span>Business Systems</span>
-        <span>•</span>
-      </div>
-      <div class="skills-group" aria-hidden="true">
-        <span>LLM Engineering</span>
-        <span>•</span>
-        <span>Agentic AI</span>
-        <span>•</span>
-        <span>RAG</span>
-        <span>•</span>
-        <span>Workflow Automation</span>
-        <span>•</span>
-        <span>MCP</span>
-        <span>•</span>
-        <span>Prompt Engineering</span>
-        <span>•</span>
-        <span>Product Prototyping</span>
-        <span>•</span>
-        <span>AI Tooling</span>
-        <span>•</span>
-        <span>Systems Design</span>
-        <span>•</span>
-        <span>ERP</span>
-        <span>•</span>
-        <span>Data Engineering</span>
-        <span>•</span>
-        <span>Support Workflows</span>
-        <span>•</span>
-        <span>API Integrations</span>
-        <span>•</span>
-        <span>Business Systems</span>
-        <span>•</span>
-      </div>
-    </div>
-  </div>
+<section class="capability-strip" aria-label="Key capabilities">
+  <span>AI operations systems</span>
+  <span>SAP / ERP automation</span>
+  <span>RAG + knowledge systems</span>
+  <span>MCP servers</span>
+  <span>Agent infrastructure</span>
+  <span>Workflow apps</span>
+  <span>Product prototypes</span>
 </section>
 
 <section id="projects" class="section">
@@ -89,28 +33,27 @@
   </div>
   <div class="project-grid">
     {{ range $index, $project := site.Data.projects.projects }}
-    <a class="project-card" href="/projects/{{ $project.slug }}/">
+    <a class="project-card project-card-tile" href="/projects/{{ $project.slug }}/">
       <div class="project-card-layout">
-        <div class="project-card-left">
-          <div class="project-meta">
-            <span class="project-number">{{ printf "%02d" (add $index 1) }}</span>
-            {{ if $project.status }}<span class="project-status{{ if eq $project.status "WORK IN PROGRESS" }} project-status-wip{{ end }}{{ if eq $project.status "FINAL BUILD STAGE" }} project-status-final-build{{ end }}{{ if eq $project.status "PHASE 4 PLANNED" }} project-status-planned{{ end }}{{ if eq $project.status "LIVE" }} project-status-live{{ end }}{{ if eq $project.status "LIVE DEMO READY" }} project-status-demo{{ end }}{{ if eq $project.status "LIVE INTERNAL PILOT" }} project-status-demo{{ end }}{{ if eq $project.status "PLANNING / LOCAL PILOT" }} project-status-local-pilot{{ end }}{{ if eq $project.status "PUBLIC DEMO READY" }} project-status-public-demo{{ end }}">{{ $project.status }}</span>{{ end }}
-          </div>
-          <p class="project-summary">{{ $project.summary }}</p>
+        <div class="project-meta">
+          <span class="project-number">{{ printf "%02d" (add $index 1) }}</span>
+          {{ if $project.status }}<span class="project-status{{ if eq $project.status "WORK IN PROGRESS" }} project-status-wip{{ end }}{{ if eq $project.status "FINAL BUILD STAGE" }} project-status-final-build{{ end }}{{ if eq $project.status "PHASE 4 PLANNED" }} project-status-planned{{ end }}{{ if eq $project.status "LIVE" }} project-status-live{{ end }}{{ if eq $project.status "LIVE DEMO READY" }} project-status-demo{{ end }}{{ if eq $project.status "LIVE INTERNAL PILOT" }} project-status-demo{{ end }}{{ if eq $project.status "PRODUCTION STAGING" }} project-status-production-staging{{ end }}{{ if eq $project.status "LIVE PRIVATE PILOT" }} project-status-private-pilot{{ end }}{{ if eq $project.status "PLANNING / LOCAL PILOT" }} project-status-local-pilot{{ end }}{{ if eq $project.status "PUBLIC DEMO READY" }} project-status-public-demo{{ end }}">{{ $project.status }}</span>{{ end }}
+        </div>
+        <div class="project-card-center">
+          <span class="project-name">{{ $project.name }}</span>
+        </div>
+        <p class="project-summary">{{ $project.summary }}</p>
+        <div class="project-card-bottom">
           <div class="project-stack">
             {{ range $project.stack }}
             <span>{{ . }}</span>
             {{ end }}
           </div>
-        </div>
-        <div class="project-divider" aria-hidden="true"></div>
-        <div class="project-card-center">
-          <span class="project-name">{{ $project.name }}</span>
-        </div>
-        <div class="project-card-arrow" aria-hidden="true">
-          <span class="project-arrow-circle">
-            <span class="project-arrow-icon">↗</span>
-          </span>
+          <div class="project-card-arrow" aria-hidden="true">
+            <span class="project-arrow-circle">
+              <span class="project-arrow-icon">↗</span>
+            </span>
+          </div>
         </div>
       </div>
     </a>

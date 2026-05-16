@@ -1,16 +1,23 @@
 {{ define "main" }}
 <article class="project-page-v2 project-page-v2-{{ .Title | urlize }}">
-  <header class="project-v2-hero">
-    <div class="project-v2-title-layer">
+  <header class="project-v2-hero project-v2-hero-compact">
+    <div class="project-v2-hero-copy">
+      <div class="project-v2-kicker-row">
+        <span>Project</span>
+        <span>{{ .Params.year | default "2026" }}</span>
+        <span>{{ .Params.status | default "In Progress" }}</span>
+      </div>
+      {{ if eq .Title "NORA" }}
+      <h1 class="project-v2-title project-v2-title-logo">
+        <span class="project-v2-sr-only">NORA</span>
+        <img src="/images/nora-app/nora-wordmark.png" alt="" aria-hidden="true">
+      </h1>
+      {{ else }}
       <h1 class="project-v2-title">{{ .Title }}</h1>
+      {{ end }}
       {{ with .Params.summary }}
       <p class="project-v2-tagline">{{ . }}</p>
       {{ end }}
-    </div>
-
-    <div class="project-v2-scroll-cue" aria-hidden="true">
-      <div class="project-v2-scroll-cue-line"></div>
-      <span class="project-v2-scroll-cue-text">Scroll</span>
     </div>
 
     <div class="project-v2-facts" aria-label="Project facts">
@@ -44,6 +51,8 @@
       {{ replace .Content "<p>DIBNY_SYSTEM_DIAGRAM</p>" (partial "dibny-flow.html" .) | safeHTML }}
     {{ else if eq .Title "NORA" }}
       {{ replace .Content "<p>NORA_SYSTEM_DIAGRAM</p>" (partial "nora-flow.html" .) | safeHTML }}
+    {{ else if eq .Title "POC App" }}
+      {{ replace .Content "<p>POC_APP_SYSTEM_DIAGRAM</p>" (partial "poc-app-flow.html" .) | safeHTML }}
     {{ else }}
       {{ .Content }}
     {{ end }}

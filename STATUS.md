@@ -573,3 +573,415 @@
   - `layouts/shortcodes/`
   - old static diagram preview files
   - `tmp/`
+
+## 2026-05-16 — POC App and NORA portfolio preview prepared
+
+### Current state
+- Prepared IM x AI portfolio updates in local preview only; no commit, push, or live deploy was performed.
+- Hugo preview is running on Tailscale at `http://100.86.180.12:1314/`.
+- New POC App page preview: `http://100.86.180.12:1314/projects/poc-app/`.
+- Updated NORA page preview: `http://100.86.180.12:1314/projects/nora/`.
+
+### Completed preview changes
+- Added POC App to the homepage project cards after NORA with status `LIVE PRIVATE PILOT`.
+- Added full POC App case-study page at `content/projects/poc-app.md` using the existing IM x AI project-page structure.
+- Added `layouts/partials/poc-app-flow.html` with a layered system diagram for warehouse device, Fastify app, SAP/SQL/PDF storage, and proof output layers.
+- Updated `layouts/_default/single.html` to render `POC_APP_SYSTEM_DIAGRAM` through the new partial.
+- Added homepage/project accent styling for POC App using an orange private-pilot treatment.
+- Updated NORA from `LIVE INTERNAL PILOT` to `PRODUCTION STAGING` in the homepage data and project page.
+- Refreshed NORA copy to mention production-intended staging, Postgres-backed persisted state, shared Work Queue/Knowledge, My Calls, admin Home, admin Settings, Access, consultant mappings, Knowledge queue, and full System controls.
+
+### Verification
+- Ran `hugo --minify --cleanDestinationDir` successfully. Existing section-layout warning remains unchanged.
+- Verified generated homepage contains POC App, `LIVE PRIVATE PILOT`, and NORA `PRODUCTION STAGING`.
+- Verified generated POC App page contains the new case-study copy and `POC APP SYSTEM` section.
+- Verified generated NORA page contains updated production-staging language.
+- HTML parser checks passed for homepage, NORA, POC App, ARGUS, and Experiments pages.
+- `node --check static/marquee.js` passed.
+- `git diff --check` passed.
+- Started Hugo preview on `http://100.86.180.12:1314/` and confirmed homepage, POC App page, and NORA page return expected content.
+
+### Deployment
+- Not deployed to live.
+- No commit or push performed.
+- Waiting for Dr. Wells' review and explicit approval before any live deployment.
+
+## 2026-05-16 — Homepage project cards switched to two-up tile preview
+
+### Current state
+- Updated the IM x AI local/Tailscale preview only; no commit, push, or live deploy was performed.
+- Preview URL remains `http://100.86.180.12:1314/`.
+
+### Completed preview changes
+- Changed homepage project cards from horizontal rows to large two-column square-style tiles on desktop.
+- Reworked the card markup so each tile now has:
+  - top number/status row;
+  - large centered project name;
+  - summary near the bottom;
+  - stack tags and arrow action in the lower row.
+- Added subtle project/status accent glow treatments for the tile backgrounds.
+- Added responsive behavior: two columns on desktop, one column on narrower/mobile screens.
+
+### Verification
+- Ran `hugo --minify --cleanDestinationDir` successfully. Existing section-layout warning remains unchanged.
+- HTML parser checks passed for homepage, NORA, and POC App pages.
+- `node --check static/marquee.js` passed.
+- `git diff --check` passed.
+- Verified served preview contains `project-card-tile` markup and the new tile CSS.
+- Captured a visual screenshot of the scrolled Projects section at `/home/giddy/pictures/imxai-project-tiles-scrolled.png`; first row shows NORA and POC App as large two-up tiles.
+
+### Deployment
+- Not deployed to live.
+- No commit or push performed.
+- Waiting for Dr. Wells' review and explicit approval before live deployment.
+
+## 2026-05-16 — Homepage project tiles reduced to three-up layout
+
+### Current state
+- Updated the IM x AI local/Tailscale preview only; no commit, push, or live deploy was performed.
+- Preview URL remains `http://100.86.180.12:1314/`.
+
+### Completed preview changes
+- Reduced the oversized two-up project tiles to a smaller three-column layout on wide desktop.
+- Responsive behavior now uses:
+  - 3 columns on wide desktop;
+  - 2 columns below 1320px;
+  - 1 column below 900px.
+- Reduced tile height, padding, project-name size, summary text size, tag size, and arrow size so the Projects section is less scroll-heavy.
+
+### Verification
+- Ran `hugo --minify --cleanDestinationDir` successfully. Existing section-layout warning remains unchanged.
+- HTML parser checks passed for homepage, NORA, and POC App pages.
+- `node --check static/marquee.js` passed.
+- `git diff --check` passed.
+- Verified served preview CSS contains the three-up tile adjustment.
+- Captured a visual screenshot at `/home/giddy/pictures/imxai-project-tiles-3up.png`; first two rows show NORA/POC App/ARGUS and GRODD/Enterpryze MCP/THAWNE in a three-up layout.
+
+### Deployment
+- Not deployed to live.
+- No commit or push performed.
+- Waiting for Dr. Wells' review and explicit approval before live deployment.
+
+## 2026-05-16 — Project page layout redesigned in preview
+
+### Current state
+- Updated the IM x AI local/Tailscale preview only; no commit, push, or live deploy was performed.
+- Preview URL remains `http://100.86.180.12:1314/`.
+
+### Completed preview changes
+- Reworked the shared project-page template instead of editing pages individually.
+- Removed the full-viewport giant project-name hero treatment.
+- Replaced it with a compact case-study header:
+  - small kicker/status row;
+  - reduced project title;
+  - summary under the title;
+  - facts card on the right.
+- Removed the old scroll cue from project pages.
+- Widened the project content measure so pages use more of the available width.
+- Kept section dividers and numbered headings, but made the layout feel more like a practical product case study than an editorial landing page.
+- Kept system diagrams full-width so architecture sections remain strong.
+
+### Verification
+- Ran `hugo --minify --cleanDestinationDir` successfully. Existing section-layout warning remains unchanged.
+- HTML parser checks passed for NORA, POC App, Enterpryze MCP, ARGUS, and homepage pages.
+- `node --check static/marquee.js` passed.
+- `git diff --check` passed.
+- Served preview checks confirmed `project-v2-hero-compact` markup and compact wide project-page CSS are live.
+- Captured screenshots:
+  - `/home/giddy/pictures/imxai-project-page-nora-redesign-top.png`
+  - `/home/giddy/pictures/imxai-project-page-nora-redesign-lower.png`
+
+### Deployment
+- Not deployed to live.
+- No commit or push performed.
+- Waiting for Dr. Wells' review and explicit approval before live deployment.
+
+## 2026-05-16 — Project section heading wrap quick pass
+
+### Current state
+- Updated the IM x AI local/Tailscale preview only; no commit, push, or live deploy was performed.
+- Preview URL remains `http://100.86.180.12:1314/`.
+
+### Completed preview changes
+- Fixed project-page section headings wrapping awkwardly, e.g. `02 - MY ROLE & CONTRIBUTION` splitting after `ROLE`.
+- Increased the heading column width and kept section titles on one line on desktop, while allowing balanced wrapping again below 1100px.
+
+### Verification
+- Ran `hugo --minify --cleanDestinationDir` successfully. Existing section-layout warning remains unchanged.
+- HTML parser checks passed for NORA, POC App, and ARGUS pages.
+- `git diff --check` passed.
+- Verified served CSS contains the nowrap heading rule.
+- Captured screenshot `/home/giddy/pictures/imxai-project-heading-nowrap.png`.
+
+### Deployment
+- Not deployed to live.
+- No commit or push performed.
+
+## 2026-05-16 — NORA project page brought up to current implementation
+
+### Current state
+- Updated the IM x AI local/Tailscale preview only; no commit, push, or live deploy was performed.
+- Preview URL remains `http://100.86.180.12:1314/projects/nora/`.
+
+### Completed preview changes
+- Read current NORA implementation/docs before editing: `PORTAL-SPEC.md`, `POSTGRES-MIGRATION-PLAN.md`, `README-ADMIN-UI.md`, and the existing portfolio NORA system diagram.
+- Updated the NORA case study copy to include the missing production additions:
+  - AWS-only LLM routing for GDPR/compliance clarity;
+  - mailbox-content privacy gate and fail-closed manual-review behavior;
+  - ephemeral Team Chat with save-to-case behavior;
+  - Postgres-backed Knowledge Library and Knowledge Candidates workflow;
+  - My Calls close/save-as-knowledge flow;
+  - broader Admin Settings/System Controls scope.
+- Updated the NORA architecture diagram to show AWS LLM routes, Postgres state, Knowledge Library, Team Chat, My Calls, My Notifications, and Admin Settings.
+- Updated homepage/project summary metadata for NORA to match the current positioning.
+
+### Verification
+- Ran `hugo --minify --cleanDestinationDir` successfully. Existing section-layout warning remains unchanged.
+- HTML parser checks passed for NORA project page and homepage.
+- `node --check static/marquee.js` passed.
+- `git diff --check` passed.
+- Verified generated and served preview contain `AWS-only email understanding`, `Team Chat`, `Knowledge Library`, `GDPR/compliance clarity`, and `AWS LLM Routes`.
+
+### Deployment
+- Not deployed to live.
+- No commit or push performed.
+
+## 2026-05-16 — NORA screenshots and roadmap added in preview
+
+### Current state
+- Updated the IM x AI local/Tailscale preview only; no commit, push, or live deploy was performed.
+- Preview URL remains `http://100.86.180.12:1314/projects/nora/`.
+
+### Completed preview changes
+- Copied Dr. Wells' NORA screenshots from `/home/giddy/pictures/NoraAppScreenshots/` into `static/images/nora-app/` with URL-safe names:
+  - `operator-home.png`
+  - `work-queue.png`
+  - `knowledge-library.png`
+  - `admin-settings.png`
+- Added a new `04 - PRODUCT SCREENS` section with four screenshot cards:
+  - Operator Home;
+  - Work Queue;
+  - Knowledge Library + Team Chat;
+  - Admin Settings.
+- Added a new `09 - ROADMAP` section describing:
+  - Phase 1: human-in-the-loop automation and knowledge collection;
+  - Phase 2: six-month learning window from approvals, rejects, manual reviews, logs, resolutions, and library entries;
+  - Phase 3: semantic intelligence layer from approved Knowledge Library plus trained/tuned model components;
+  - Phase 4: case-by-case automation for proven low-risk categories;
+  - target state: NORA as the Level 1 support layer while consultants handle Level 2 support, exceptions, escalations, and complex customer work.
+- Renumbered later NORA project-page sections after inserting the screenshots and roadmap.
+- Added responsive CSS for screenshot cards and roadmap cards; polished roadmap after inspection by removing an overly busy connector line.
+
+### Verification
+- Ran `hugo --minify --cleanDestinationDir` successfully. Existing section-layout warning remains unchanged.
+- HTML parser checks passed for NORA project page and homepage.
+- `node --check static/marquee.js` passed.
+- `git diff --check` passed.
+- Verified generated page contains Product Screens, Operator Home, Roadmap, Six-month learning window, and Level 1 support layer.
+- Verified generated and served screenshot assets exist.
+- Captured visual checks:
+  - `/home/giddy/pictures/imxai-nora-screenshots-roadmap.png`
+  - `/home/giddy/pictures/imxai-nora-roadmap-polished.png`
+
+### Deployment
+- Not deployed to live.
+- No commit or push performed.
+
+## 2026-05-16 — NORA logo title added in preview
+
+### Current state
+- Updated the IM x AI local/Tailscale preview only; no commit, push, or live deploy was performed.
+- Preview URL remains `http://100.86.180.12:1314/projects/nora/`.
+
+### Completed preview changes
+- Replaced the NORA project-page text title with the actual NORA wordmark in the compact hero.
+- Copied the transparent NORA wordmark into `static/images/nora-app/nora-wordmark.png`.
+- Kept accessible heading text via visually-hidden `NORA` text so the page still has a real `h1`.
+- Added responsive CSS for the NORA wordmark hero treatment.
+
+### Verification
+- Ran `hugo --minify --cleanDestinationDir` successfully. Existing section-layout warning remains unchanged.
+- HTML parser checks passed for NORA, POC App, and homepage.
+- `node --check static/marquee.js` passed.
+- `git diff --check` passed.
+- Verified generated and served NORA page contains the wordmark markup.
+- Verified generated and served wordmark asset exists.
+- Captured visual check: `/home/giddy/pictures/imxai-nora-logo-title.png`.
+
+### Deployment
+- Not deployed to live.
+- No commit or push performed.
+
+## 2026-05-16 — Public IP removed from POC App preview page
+
+### Current state
+- Updated the IM x AI local/Tailscale preview only; no commit, push, or live deploy was performed.
+- Preview URL remains `http://100.86.180.12:1314/projects/poc-app/` for private review only.
+
+### Completed preview changes
+- Removed the explicit private Tailscale IP/port from the public-facing POC App project-page copy.
+- Replaced it with non-sensitive wording: `private internal pilot behind the trusted network`.
+- Added a public-page hygiene check for literal IP URLs across generated site/source paths.
+
+### Verification
+- Ran `hugo --minify --cleanDestinationDir` successfully. Existing section-layout warning remains unchanged.
+- HTML parser checks passed for POC App, NORA, and homepage.
+- `node --check static/marquee.js` passed.
+- `git diff --check` passed.
+- Grep scan found no literal private IP or direct IP URLs in `public`, `content`, `data`, `layouts`, or `static`.
+- Served POC preview page no longer contains the private IP.
+
+### Deployment
+- Not deployed to live.
+- No commit or push performed.
+
+## 2026-05-16 — POC App screenshots added in preview
+
+### Current state
+- Updated the IM x AI local/Tailscale preview only; no commit, push, or live deploy was performed.
+- Preview URL remains `http://100.86.180.12:1314/projects/poc-app/` for private review only.
+
+### Completed preview changes
+- Copied Dr. Wells' POC App screenshots from `/home/giddy/pictures/POCAppScreenshots/` into `static/images/poc-app/` with URL-safe names:
+  - `fetch-document.png`
+  - `sign-document.png`
+  - `pdf-proof.png`
+- Added a new `04 - PRODUCT SCREENS` section with screenshot cards for:
+  - Fetch Document;
+  - Signing Flow;
+  - Proof PDF.
+- Renumbered later POC App project-page sections after inserting screenshots.
+- Added POC App-specific screenshot CSS using the orange project accent and centered the portrait PDF proof card.
+- Removed remaining POC App public-page references to `Tailscale` in favor of trusted/private network wording, while preserving the private preview URL only in internal logs.
+
+### Verification
+- Ran `hugo --minify --cleanDestinationDir` successfully. Existing section-layout warning remains unchanged.
+- HTML parser checks passed for POC App, NORA, and homepage.
+- `node --check static/marquee.js` passed.
+- `git diff --check` passed.
+- Verified generated page contains Product Screens, Fetch Document, Signing Flow, and Proof PDF.
+- Verified generated and served screenshot assets exist.
+- Grep scan found no literal private IP or direct IP URLs in `public`, `content`, `data`, `layouts`, or `static`.
+- Captured visual checks:
+  - `/home/giddy/pictures/imxai-poc-app-screenshots.png`
+  - `/home/giddy/pictures/imxai-poc-app-pdf-screen.png`
+
+### Deployment
+- Not deployed to live.
+- No commit or push performed.
+
+## 2026-05-16 — Homepage hero/ribbon/project typography matured in preview
+
+### Current state
+- Updated the IM x AI local/Tailscale preview only; no commit, push, or live deploy was performed.
+- Preview URL remains `http://100.86.180.12:1314/`.
+
+### Completed preview changes
+- Reworked the homepage hero from an art-poster style into a more product/studio-style introduction.
+- Switched the hero name from serif display typography to clean Manrope sans typography and reduced the oversized treatment.
+- Added clearer positioning copy: practical AI systems for operations, automation, and agent-native workflows.
+- Added primary/secondary hero actions: View projects and About the work.
+- Removed the moving skills ribbon from homepage markup.
+- Replaced it with a compact capability strip:
+  - AI operations systems;
+  - SAP / ERP automation;
+  - MCP servers;
+  - Agent infrastructure;
+  - Workflow apps;
+  - Product prototypes.
+- Switched project-card titles from artistic serif display type to cleaner Manrope product-tile typography.
+- Polished the hero/card sizing after visual inspection so the name and POC App card title remain readable without feeling poster-sized.
+
+### Verification
+- Ran `hugo --minify --cleanDestinationDir` successfully. Existing section-layout warning remains unchanged.
+- HTML parser checks passed for homepage, NORA, and POC App.
+- `node --check static/marquee.js` passed.
+- `git diff --check` passed.
+- Verified homepage has capability-strip markup and no `skills-ribbon` markup.
+- Grep scan found no literal private IP or direct IP URLs in `public`, `content`, `data`, `layouts`, or `static`.
+- Captured visual checks:
+  - `/home/giddy/pictures/imxai-home-hero-product-typography-polished.png`
+  - `/home/giddy/pictures/imxai-home-project-cards-product-typography-polished.png`
+
+### Deployment
+- Not deployed to live.
+- No commit or push performed.
+
+## 2026-05-16 — Experiments page typography matured in preview
+
+### Current state
+- Updated the IM x AI local/Tailscale preview only; no commit, push, or live deploy was performed.
+- Preview URL remains `http://100.86.180.12:1314/experiments/` for private review only.
+
+### Completed preview changes
+- Gave the Experiments page the same mature product/studio typography treatment as the homepage.
+- Changed hero copy from `Experiments` art-title framing to `Projects that sharpened the work.`
+- Switched Experiments hero title, archive stats, and experiment-card titles from serif display typography to clean Manrope sans typography.
+- Added compact experiment theme chips: Strategy tested, Scope reduced, Evidence kept, Lessons reused.
+- Kept the archive-card concept but tightened it into a cleaner operating-principle card.
+- Reduced the oversized/expressive feel of experiment cards while preserving their archive function and dark visual style.
+
+### Verification
+- Ran `hugo --minify --cleanDestinationDir` successfully. Existing section-layout warning remains unchanged.
+- HTML parser checks passed for Experiments, homepage, NORA, and POC App.
+- `node --check static/marquee.js` passed.
+- `git diff --check` passed.
+- Verified served Experiments page contains the new title and theme strip.
+- Grep scan found no literal private IP or direct IP URLs in `public`, `content`, `data`, `layouts`, or `static`.
+- Captured visual checks:
+  - `/home/giddy/pictures/imxai-experiments-product-typography-hero.png`
+  - `/home/giddy/pictures/imxai-experiments-product-typography-cards.png`
+
+### Deployment
+- Not deployed to live.
+- No commit or push performed.
+
+## 2026-05-16 — Project-page hero titles switched to sans except NORA
+
+### Current state
+- Updated the IM x AI local/Tailscale preview only; no commit, push, or live deploy was performed.
+- Preview URLs remain private review only, including `http://100.86.180.12:1314/projects/poc-app/`, `/projects/argus/`, and `/projects/nora/`.
+
+### Completed preview changes
+- Switched shared project-page hero titles from expressive serif/display typography to clean Manrope product/studio typography.
+- Scoped the rule to all project pages except `.project-v2-title-logo`, preserving the NORA wordmark treatment.
+- Added a smaller override for Enterpryze MCP so the long title does not dominate the header.
+- Added responsive sizing for mobile project-page hero titles.
+
+### Verification
+- Ran `hugo --minify --cleanDestinationDir` successfully. Existing section-layout warning remains unchanged.
+- HTML parser checks passed for POC App, ARGUS, NORA, Enterpryze MCP, and homepage.
+- `node --check static/marquee.js` passed.
+- `git diff --check` passed.
+- Verified NORA still uses `project-v2-title-logo` and POC App/ARGUS render normal text titles.
+- Grep scan found no literal private IP or direct IP URLs in `public`, `content`, `data`, `layouts`, or `static`.
+- Captured visual checks:
+  - `/home/giddy/pictures/imxai-project-title-poc-app-sans.png`
+  - `/home/giddy/pictures/imxai-project-title-argus-sans.png`
+  - `/home/giddy/pictures/imxai-project-title-nora-logo-preserved.png`
+
+### Deployment
+- Not deployed to live.
+- No commit or push performed.
+
+## 2026-05-16 — RAG added to homepage capability strip
+
+### Current state
+- Updated the IM x AI local/Tailscale preview only; no commit, push, or live deploy was performed.
+- Preview URL remains `http://100.86.180.12:1314/` for private review only.
+
+### Completed preview changes
+- Added `RAG + knowledge systems` to the homepage capability strip.
+- Left blockchain out of the strip to keep the homepage focused on AI operations, ERP automation, RAG/knowledge systems, MCP, agent infrastructure, workflow apps, and product prototypes.
+
+### Verification
+- Ran `hugo --minify --cleanDestinationDir` successfully. Existing section-layout warning remains unchanged.
+- HTML parser checks passed for homepage, Experiments, and NORA.
+- `node --check static/marquee.js` passed.
+- `git diff --check` passed.
+- Verified generated and served homepage contain `RAG + knowledge systems`.
+- Grep scan found no literal private IP or direct IP URLs in `public`, `content`, `data`, `layouts`, or `static`.
+
+### Deployment
+- Not deployed to live.
+- No commit or push performed.
