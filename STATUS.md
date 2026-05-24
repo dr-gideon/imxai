@@ -1153,3 +1153,30 @@
 - Verified `/projects/poc-app/` contains `project-v2-hero-poc-video`, `project-v2-hero-video`, `project-v2-facts-inline`, and the YouTube embed URL.
 - Verified the generated page no longer contains `project-v2-intro-media` or escaped literal `<div class=` text.
 - No commit, push, or live deploy performed.
+
+## 2026-05-24 — POC App demo video live deployment
+
+### Deployment
+- Dr. Wells approved the POC App hero video preview and gave the magic phrase: `run barry run`.
+- Ran final verification before deployment:
+  - `hugo --minify --cleanDestinationDir`;
+  - generated POC page checks for hero video, inline facts, YouTube embed, and absence of broken intro/literal div text;
+  - `node --check static/marquee.js`;
+  - `git diff --check`;
+  - private/direct-IP scan across `public`, `content`, `data`, `layouts`, and `static/css`.
+- Committed and pushed approved POC App demo video changes to `main`.
+- Commit: `a92a6bc` (`Add POC App demo video`).
+
+### Live result
+- Initial live check served the previous Cloudflare build.
+- Cache-busted recheck passed on attempt 2.
+- Live POC App page verified at `https://imxai.xyz/projects/poc-app/` with:
+  - `project-v2-hero-poc-video`;
+  - `project-v2-hero-video`;
+  - `project-v2-facts-inline`;
+  - YouTube privacy-enhanced embed `youtube-nocookie.com/embed/5NwqrQfRhWA`.
+
+### Included changes
+- Added POC App demo video to the hero area instead of a separate section.
+- Moved POC App facts table into the left hero copy as a single-row desktop layout.
+- Kept project description clean below the hero.
