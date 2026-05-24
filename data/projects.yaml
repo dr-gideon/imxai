@@ -14,6 +14,21 @@ projects:
       NORA is an internal support workflow copilot designed to automate repeatable service-call logging and email-routing work for a small support team. It classifies whether an email should create a service call, update an existing one, trigger a reassignment, move to manual review, or require no action.
 
       The system now includes a production-intended operator/admin portal direction: shared Work Queue and Knowledge surfaces, My Calls, ephemeral Team Chat, role-specific Home and Settings, access management, consultant mappings, Knowledge Library/Candidates, and high-sensitivity system controls around live execution, mailbox intake, AWS LLM routing, privacy gates, and office hours.
+  - slug: bart
+    name: BART
+    status: PRIVATE DEMO READY
+    summary: Hosted marketing lead intake automation for Enterpryze workflows, turning the clean new-prospect handoff from a 15-20 minute manual delay into an around-five-second Teams alert.
+    impact: Private hosted demo has proven new-prospect and existing-BP review paths across Enterpryze lead creation, Jotform UDF writeback, Teams cards, SQLite audit state, and mock-safe default runtime.
+    stack:
+      - Enterpryze API
+      - Jotform
+      - Teams Bot
+      - SQLite
+      - TypeScript
+    body: |
+      BART is a marketing lead intake automation that turns submitted web enquiries into controlled Enterpryze sales workflow records. It matches submitted companies and contacts against Business Partner data, creates new prospects when appropriate, pauses for review when an existing customer is missing the submitted contact, and resumes only after the selected account has been re-synced.
+
+      The current hosted demo is private and mock-safe by default, but the live path has been proven through controlled tests: Enterpryze lead/prospect writes, Jotform submission creation, lead UDF update, proactive Teams cards, manual-review resume, and admin read endpoints. For a clean new-prospect enquiry, BART compresses the salesperson handoff from the usual 15-20 minute manual delay to about five seconds.
   - slug: poc-app
     name: POC App
     status: LIVE PRIVATE PILOT

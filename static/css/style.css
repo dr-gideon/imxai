@@ -1697,3 +1697,11 @@ h1 {
     font-size: clamp(2rem, 12vw, 3rem);
   }
 }
+
+.project-status-private-demo {
+  color: #93c5fd;
+  border-color: rgba(147, 197, 253, 0.36);
+  background: rgba(147, 197, 253, 0.065);
+}
+
+.project-card-tile:has(.project-status-private-demo) { --project-tile-glow: rgba(147, 197, 253, 0.16); }

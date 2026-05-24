@@ -1043,3 +1043,45 @@
 
 ### Final note
 - Preview-first workflow completed correctly: Dr. Wells reviewed, approved, gave `run barry run`, then deployment happened.
+
+## 2026-05-24 — BART portfolio preview
+
+### Current state
+- Added BART to the IM x AI portfolio preview only.
+- No commit, push, or live deploy was performed.
+- Preview server is running at `http://100.86.180.12:1314/` for Dr. Wells' review.
+
+### Completed preview changes
+- Added BART homepage project card near the top of selected work, after NORA.
+- Added status `PRIVATE DEMO READY` with blue status/glow styling.
+- Created `content/projects/bart.md` as a full case-study page using the current project-page structure.
+- Created `layouts/partials/bart-flow.html` with a BART workflow diagram covering:
+  - intake layer;
+  - match + review layer;
+  - execution layer;
+  - notification + control layer;
+  - state + audit layer.
+- Wired `BART_WORKFLOW_DIAGRAM` in `layouts/_default/single.html`.
+- Added BART project-page accent styling and workflow-state card styling in `static/css/project-page-v2.css`.
+- Bumped the project page CSS cache key in `layouts/_default/baseof.html` for review freshness.
+
+### Verification
+- `hugo --cleanDestinationDir` passed.
+- Local preview fetch confirmed homepage contains `BART` and `PRIVATE DEMO READY`.
+- Local preview fetch confirmed `/projects/bart/` contains `BART WORKFLOW` and `Mock-safe by default`.
+
+### Pending
+- Dr. Wells to review the Tailscale preview.
+- Do not deploy live until explicit approval and magic phrase.
+
+### 2026-05-24 BART timing/value copy update
+- Updated the preview copy after Dr. Wells clarified the strongest operational value: current new-prospect web enquiry handling takes about 15-20 minutes to reach a salesperson, while BART can complete the clean new-prospect handoff in about 5 seconds and enable a call within roughly 10 seconds.
+- Added the timing story to:
+  - homepage BART card summary;
+  - BART project page intro/inspiration;
+  - workflow-state card for new prospects;
+  - lessons/current-state copy.
+- Rebuilt the preview with `hugo --cleanDestinationDir`.
+- Verified the Tailscale preview homepage includes `15-20 minute` and `around-five-second`.
+- Verified `/projects/bart/` includes `15 to 20 minutes`, `about five seconds`, and `roughly ten seconds`.
+- No commit, push, or live deploy performed.

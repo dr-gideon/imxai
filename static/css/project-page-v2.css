@@ -1253,3 +1253,21 @@
     font-size: clamp(3.2rem, 14vw, 5.8rem);
   }
 }
+
+.project-page-v2-bart .project-v2-scroll-cue-line::after {
+  background: #60a5fa;
+  box-shadow: 0 0 10px rgba(96, 165, 250, 0.35);
+}
+
+.project-v2-architecture-layer-core-bart {
+  border-color: rgba(96, 165, 250, 0.24);
+  background:
+    radial-gradient(circle at 18% 0%, rgba(96, 165, 250, 0.12), transparent 34%),
+    rgba(255,255,255,0.026);
+}
+
+.project-v2-roadmap-bart .project-v2-roadmap-step {
+  color: #93c5fd;
+  border-color: rgba(147, 197, 253, 0.32);
+  background: rgba(147, 197, 253, 0.07);
+}
