@@ -1180,3 +1180,54 @@
 - Added POC App demo video to the hero area instead of a separate section.
 - Moved POC App facts table into the left hero copy as a single-row desktop layout.
 - Kept project description clean below the hero.
+
+## 2026-05-24 — End-of-session handoff
+
+### Current live state
+- BART portfolio card and project page are live.
+- POC App YouTube demo video is live in the hero area.
+- Latest pushed commit:  ().
+-  matches local : .
+
+### Live pages verified this session
+- Homepage: .
+- BART page: .
+- POC App page: .
+
+### Deployed commits this session
+-  — .
+-  — .
+-  — .
+-  — .
+
+### Verification gates used
+- Start building sites … 
+hugo v0.147.6-0a5fd8ebb8e2ca798515e8c564c14e32db3b4127+extended linux/amd64 BuildDate=2025-05-27T11:17:16Z VendorInfo=gohugoio
+
+
+                   | EN  
+-------------------+-----
+  Pages            | 10  
+  Paginator pages  |  0  
+  Non-page files   |  0  
+  Static files     | 22  
+  Processed images |  0  
+  Aliases          |  0  
+  Cleaned          |  0  
+
+Total in 68 ms.
+- Generated-content checks for changed pages.
+- .
+- .
+- Private/direct-IP scans across public/source web paths.
+- Cache-busted live verification after Cloudflare initially served stale builds.
+
+### Working tree note
+- Tracked source files are clean after deployment/log pushes.
+- Remaining untracked paths are local scratch/backups only and were intentionally not committed:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
