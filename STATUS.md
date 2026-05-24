@@ -1186,48 +1186,35 @@
 ### Current live state
 - BART portfolio card and project page are live.
 - POC App YouTube demo video is live in the hero area.
-- Latest pushed commit:  ().
--  matches local : .
+- Latest pushed handoff commit before correction: `471b8b6` (`Log IM x AI session handoff`).
+- This section was corrected after an initial shell-quoting mistake in the handoff log text.
 
 ### Live pages verified this session
-- Homepage: .
-- BART page: .
-- POC App page: .
+- Homepage: `https://imxai.xyz/`.
+- BART page: `https://imxai.xyz/projects/bart/`.
+- POC App page: `https://imxai.xyz/projects/poc-app/`.
 
 ### Deployed commits this session
--  — .
--  — .
--  — .
--  — .
+- `c093c16` — `Add BART portfolio page`.
+- `17bbb2f` — `Log BART portfolio deployment`.
+- `a92a6bc` — `Add POC App demo video`.
+- `d17b698` — `Log POC App video deployment`.
+- `471b8b6` — `Log IM x AI session handoff`.
 
 ### Verification gates used
-- Start building sites … 
-hugo v0.147.6-0a5fd8ebb8e2ca798515e8c564c14e32db3b4127+extended linux/amd64 BuildDate=2025-05-27T11:17:16Z VendorInfo=gohugoio
-
-
-                   | EN  
--------------------+-----
-  Pages            | 10  
-  Paginator pages  |  0  
-  Non-page files   |  0  
-  Static files     | 22  
-  Processed images |  0  
-  Aliases          |  0  
-  Cleaned          |  0  
-
-Total in 68 ms.
+- `hugo --minify --cleanDestinationDir`.
 - Generated-content checks for changed pages.
-- .
-- .
+- `node --check static/marquee.js`.
+- `git diff --check`.
 - Private/direct-IP scans across public/source web paths.
 - Cache-busted live verification after Cloudflare initially served stale builds.
 
 ### Working tree note
-- Tracked source files are clean after deployment/log pushes.
+- Tracked source files are clean after deployment/log pushes, aside from this handoff-log correction.
 - Remaining untracked paths are local scratch/backups only and were intentionally not committed:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - `.trash/`
+  - `backups/`
+  - `layouts/shortcodes/`
+  - `static/argus-flow-*.html`
+  - `static/culld-flow-*.html`
+  - `tmp/`
