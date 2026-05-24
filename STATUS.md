@@ -1085,3 +1085,29 @@
 - Verified the Tailscale preview homepage includes `15-20 minute` and `around-five-second`.
 - Verified `/projects/bart/` includes `15 to 20 minutes`, `about five seconds`, and `roughly ten seconds`.
 - No commit, push, or live deploy performed.
+
+## 2026-05-24 — BART portfolio live deployment
+
+### Deployment
+- Dr. Wells approved the BART preview and gave the magic phrase: `run barry run`.
+- Ran final verification before deployment:
+  - `hugo --minify --cleanDestinationDir`;
+  - generated-content checks for homepage and BART project page;
+  - `node --check static/marquee.js`;
+  - `git diff --check`;
+  - private/direct-IP scan across `public`, `content`, `data`, `layouts`, and `static/css`.
+- Committed and pushed approved BART portfolio changes to `main`.
+- Commit: `c093c16` (`Add BART portfolio page`).
+
+### Live result
+- Initial live check served the previous Cloudflare build.
+- Cache-busted recheck passed on attempt 2.
+- Live homepage verified at `https://imxai.xyz/` with BART and `PRIVATE DEMO READY` present.
+- Live BART page verified at `https://imxai.xyz/projects/bart/` with `BART WORKFLOW`, `about five seconds`, and `Mock-safe by default` present.
+
+### Included changes
+- Added BART homepage project card.
+- Added BART project page.
+- Added BART workflow diagram partial.
+- Added private-demo status styling and BART page accent.
+- Added timing/value story: current new-prospect web enquiry handoff is ~15-20 minutes; BART compresses the clean new-prospect handoff to about 5 seconds and enables a roughly 10-second callback.
