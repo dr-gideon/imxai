@@ -1188,6 +1188,7 @@
 - POC App YouTube demo video is live in the hero area.
 - Latest pushed handoff commit before correction: `471b8b6` (`Log IM x AI session handoff`).
 - This section was corrected after an initial shell-quoting mistake in the handoff log text.
+- Latest pushed commit after correction: `b276b83` (`Fix IM x AI handoff log`).
 
 ### Live pages verified this session
 - Homepage: `https://imxai.xyz/`.
@@ -1200,6 +1201,7 @@
 - `a92a6bc` — `Add POC App demo video`.
 - `d17b698` — `Log POC App video deployment`.
 - `471b8b6` — `Log IM x AI session handoff`.
+- `b276b83` — `Fix IM x AI handoff log`.
 
 ### Verification gates used
 - `hugo --minify --cleanDestinationDir`.
