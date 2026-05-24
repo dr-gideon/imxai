@@ -1,6 +1,6 @@
 {{ define "main" }}
 <article class="project-page-v2 project-page-v2-{{ .Title | urlize }}">
-  <header class="project-v2-hero project-v2-hero-compact">
+  <header class="project-v2-hero project-v2-hero-compact{{ if eq .Title "POC App" }} project-v2-hero-poc-video{{ end }}">
     <div class="project-v2-hero-copy">
       <div class="project-v2-kicker-row">
         <span>Project</span>
@@ -18,8 +18,36 @@
       {{ with .Params.summary }}
       <p class="project-v2-tagline">{{ . }}</p>
       {{ end }}
+      {{ if eq .Title "POC App" }}
+      <div class="project-v2-facts project-v2-facts-inline" aria-label="Project facts">
+        <div class="project-v2-fact">
+          <span class="project-v2-fact-label">Year</span>
+          <span class="project-v2-fact-value">{{ .Params.year | default "2026" }}</span>
+        </div>
+        <div class="project-v2-fact">
+          <span class="project-v2-fact-label">Type</span>
+          <span class="project-v2-fact-value">{{ .Params.projectType | default "Project" }}</span>
+        </div>
+        <div class="project-v2-fact">
+          <span class="project-v2-fact-label">Role</span>
+          <span class="project-v2-fact-value">{{ .Params.role | default "Product + Systems Design" }}</span>
+        </div>
+        <div class="project-v2-fact">
+          <span class="project-v2-fact-label">Status</span>
+          <span class="project-v2-fact-value">{{ .Params.status | default "In Progress" }}</span>
+        </div>
+      </div>
+      {{ end }}
     </div>
 
+    {{ if eq .Title "POC App" }}
+    <aside class="project-v2-hero-video" aria-label="POC App demo video">
+      <div class="project-v2-hero-video-frame">
+        <iframe src="https://www.youtube-nocookie.com/embed/5NwqrQfRhWA" title="POC App demo video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <p>Demo walkthrough</p>
+    </aside>
+    {{ else }}
     <div class="project-v2-facts" aria-label="Project facts">
       <div class="project-v2-fact">
         <span class="project-v2-fact-label">Year</span>
@@ -38,6 +66,7 @@
         <span class="project-v2-fact-value">{{ .Params.status | default "In Progress" }}</span>
       </div>
     </div>
+    {{ end }}
   </header>
 
   <section class="project-v2-content">

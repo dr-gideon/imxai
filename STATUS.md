@@ -1111,3 +1111,45 @@
 - Added BART workflow diagram partial.
 - Added private-demo status styling and BART page accent.
 - Added timing/value story: current new-prospect web enquiry handoff is ~15-20 minutes; BART compresses the clean new-prospect handoff to about 5 seconds and enables a roughly 10-second callback.
+
+## 2026-05-24 — POC App video preview
+
+### Current state
+- Added POC App demo video to the IM x AI preview only.
+- No commit, push, or live deploy was performed.
+
+### Completed preview changes
+- Added `05 - DEMO VIDEO` section to `content/projects/poc-app.md`.
+- Embedded the YouTube video through the privacy-enhanced URL `https://www.youtube-nocookie.com/embed/5NwqrQfRhWA`.
+- Added a short caption describing the proof-of-collection flow.
+- Renumbered later POC App sections so the page order remains clean.
+- Added responsive video-card styling to `static/css/project-page-v2.css`.
+
+### Verification
+- `hugo --cleanDestinationDir` passed.
+- Preview page `http://100.86.180.12:1314/projects/poc-app/` contains `DEMO VIDEO`, the YouTube embed URL, and caption copy.
+- `git diff --check` passed.
+
+### Pending
+- Dr. Wells to review the Tailscale preview.
+- Do not deploy live until explicit approval and magic phrase.
+
+### 2026-05-24 POC App video placement update
+- Moved the POC App YouTube video from a separate `DEMO VIDEO` section into the top intro area beside the project description.
+- Added compact inline video styling with `project-v2-intro-media` and `project-v2-inline-video`.
+- Removed the separate video section and restored later section numbering.
+- Rebuilt preview with `hugo --cleanDestinationDir`.
+- Verified `/projects/poc-app/` contains the inline video classes and YouTube embed, and no longer contains `DEMO VIDEO`.
+- No commit, push, or live deploy performed.
+
+### 2026-05-24 POC App hero video rework
+- Dr. Wells' screenshot showed the previous intro-side video placement overlapped/mangled the description.
+- Reworked the layout so POC App has a project-specific hero variant:
+  - video moved into the hero area as `project-v2-hero-video`;
+  - facts table moved into the left hero copy as one-row `project-v2-facts-inline` on desktop;
+  - intro copy restored to plain clean Markdown/HTML below the hero;
+  - removed the unused intro-video CSS from the preview stylesheet.
+- Rebuilt preview with `hugo --cleanDestinationDir`.
+- Verified `/projects/poc-app/` contains `project-v2-hero-poc-video`, `project-v2-hero-video`, `project-v2-facts-inline`, and the YouTube embed URL.
+- Verified the generated page no longer contains `project-v2-intro-media` or escaped literal `<div class=` text.
+- No commit, push, or live deploy performed.
