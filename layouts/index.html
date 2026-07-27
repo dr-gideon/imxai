@@ -1,138 +1,180 @@
 {{ define "main" }}
-<section class="hero">
-  <div class="hero-copy reveal-slide">
-    <p class="eyebrow">{{ site.Params.role }}</p>
-    <h1 class="hero-name hero-name-large">{{ site.Params.name }}</h1>
-    <p class="hero-positioning">Building practical AI systems for operations, automation, and agent-native workflows.</p>
-    <p class="hero-trust-line">Portfolio of internal tools, MCP servers, support automation systems, and AI-assisted product experiments grounded in SAP, ERP, data workflows, and real operational constraints.</p>
-    <div class="hero-actions" aria-label="Homepage actions">
-      <a class="button button-primary" href="#projects">View projects</a>
-      <a class="button button-secondary" href="#about">About the work</a>
+<!-- HERO -->
+<section class="hero container">
+  <div class="hero-copy reveal">
+    <p class="eyebrow"><span class="eyebrow-line"></span>{{ site.Params.role }} · {{ site.Params.company }}</p>
+    <h1 class="hero-name">Iyyappan<br>Mani</h1>
+    <p class="hero-lede">{{ site.Params.tagline }}</p>
+    <p class="hero-sub">I ship systems that reach real users: production support automation, MCP servers, and agent tooling that hold up under real operational constraints.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#contact">Get in touch <span class="btn-arrow">→</span></a>
+      <a class="btn btn-ghost" href="#work">View work</a>
     </div>
     <div class="hero-facts">
-      <span class="availability-pill">Open to roles</span>
-      <span>{{ site.Params.location }}</span>
+      <span class="fact"><span class="status-dot"></span> {{ site.Params.availability }}</span>
+      <span class="fact">◍ {{ site.Params.location }}</span>
     </div>
   </div>
+
+  <aside class="hero-panel reveal" aria-hidden="true">
+    <div class="panel-head">
+      <span class="panel-dots"><i></i><i></i><i></i></span>
+      <span class="panel-title">~/agentic-ai</span>
+    </div>
+    <pre class="panel-body"><span class="c-com"># production systems, not demos</span>
+<span class="c-key">const</span> <span class="c-var">engineer</span> = {
+  <span class="c-prop">role</span>:     <span class="c-str">"Agentic AI Engineer"</span>,
+  <span class="c-prop">at</span>:       <span class="c-str">"Enterpryze"</span>,
+  <span class="c-prop">builds</span>:   [<span class="c-str">"agents"</span>, <span class="c-str">"MCP"</span>, <span class="c-str">"automation"</span>],
+  <span class="c-prop">grounded</span>: <span class="c-str">"ERP · support · data"</span>,
+  <span class="c-prop">inProd</span>:   <span class="c-key">true</span>
+};</pre>
+    <div class="panel-meta">
+      <span>status: shipping</span>
+      <span class="blink">▊</span>
+    </div>
+  </aside>
 </section>
 
-<section class="capability-strip" aria-label="Key capabilities">
-  <span>AI operations systems</span>
-  <span>SAP / ERP automation</span>
-  <span>RAG + knowledge systems</span>
-  <span>MCP servers</span>
-  <span>Agent infrastructure</span>
-  <span>Workflow apps</span>
-  <span>Product prototypes</span>
+<!-- IMPACT STRIP -->
+<section class="impact container" aria-label="Highlights">
+  <div class="impact-item reveal">
+    <span class="impact-key">Live in production</span>
+    <span class="impact-val">RESOLVE runs daily for internal support teams</span>
+  </div>
+  <div class="impact-item reveal">
+    <span class="impact-key">Customer adopted</span>
+    <span class="impact-val">POC App MVP accepted by a customer, now in testing</span>
+  </div>
+  <div class="impact-item reveal">
+    <span class="impact-key">8+ systems</span>
+    <span class="impact-val">Shipped across ERP, agents &amp; automation</span>
+  </div>
 </section>
 
-<section id="projects" class="section">
-  <div class="section-head section-head-projects">
-    <p class="section-kicker">Selected work</p>
-    <h2>Projects built in the transition, not around it.</h2>
+<!-- SELECTED WORK -->
+<section id="work" class="section container">
+  <div class="section-head reveal">
+    <p class="kicker">Selected work</p>
+    <h2>Systems that reached<br>real users.</h2>
+    <p class="section-note">A focused cut of production and customer-facing work. Details are kept high level by design. Happy to walk through the depth in conversation.</p>
   </div>
   <div class="project-grid">
-    {{ range $index, $project := site.Data.projects.projects }}
-    <a class="project-card project-card-tile" href="/projects/{{ $project.slug }}/">
-      <div class="project-card-layout">
-        <div class="project-meta">
-          <span class="project-number">{{ printf "%02d" (add $index 1) }}</span>
-          {{ if $project.status }}<span class="project-status{{ if eq $project.status "WORK IN PROGRESS" }} project-status-wip{{ end }}{{ if eq $project.status "FINAL BUILD STAGE" }} project-status-final-build{{ end }}{{ if eq $project.status "PHASE 4 PLANNED" }} project-status-planned{{ end }}{{ if eq $project.status "LIVE" }} project-status-live{{ end }}{{ if eq $project.status "LIVE DEMO READY" }} project-status-demo{{ end }}{{ if eq $project.status "LIVE INTERNAL PILOT" }} project-status-demo{{ end }}{{ if eq $project.status "PRODUCTION STAGING" }} project-status-production-staging{{ end }}{{ if eq $project.status "LIVE PRIVATE PILOT" }} project-status-private-pilot{{ end }}{{ if eq $project.status "PLANNING / LOCAL PILOT" }} project-status-local-pilot{{ end }}{{ if eq $project.status "PUBLIC DEMO READY" }} project-status-public-demo{{ end }}{{ if eq $project.status "PRIVATE DEMO READY" }} project-status-private-demo{{ end }}">{{ $project.status }}</span>{{ end }}
-        </div>
-        <div class="project-card-center">
-          <span class="project-name">{{ $project.name }}</span>
-        </div>
-        <p class="project-summary">{{ $project.summary }}</p>
-        <div class="project-card-bottom">
-          <div class="project-stack">
-            {{ range $project.stack }}
-            <span>{{ . }}</span>
-            {{ end }}
-          </div>
-          <div class="project-card-arrow" aria-hidden="true">
-            <span class="project-arrow-circle">
-              <span class="project-arrow-icon">↗</span>
-            </span>
-          </div>
-        </div>
+    {{ range $i, $p := hugo.Data.projects.projects }}
+    <article class="project-card reveal" style="transition-delay:{{ mul (mod $i 2) 80 }}ms">
+      <div class="pc-top">
+        <span class="pc-name-wrap">
+          <span class="pc-name">{{ $p.name }}</span>
+          {{ with $p.former }}<span class="pc-former">{{ . }}</span>{{ end }}
+        </span>
+        <span class="pc-status {{ $p.cls }}">{{ $p.status }}</span>
       </div>
-    </a>
+      <p class="pc-summary">{{ $p.summary }}</p>
+      <div class="pc-bottom">
+        <div class="pc-stack">
+          {{ range $p.stack }}<span>{{ . }}</span>{{ end }}
+        </div>
+        {{ with $p.link }}<a class="pc-link" href="{{ . }}" target="_blank" rel="noopener">{{ $p.linkLabel | default "View" }} →</a>{{ end }}
+      </div>
+    </article>
     {{ end }}
   </div>
 </section>
 
-<section id="about" class="section about-section">
-  <div class="section-head">
-    <p class="section-kicker">About</p>
-    <h2>Grounded in systems. Built in collaboration.</h2>
-  </div>
-  <div class="about-layout">
-    <div class="about-copy">
-      <p>My background is in SAP Business One, business systems, reporting, and data workflows, where I spent years turning operational needs into working solutions for users and stakeholders.</p>
-      <p>That work taught me how to think in systems, not features. I learned how processes break, where teams get blocked, and what useful software actually has to do once it leaves the whiteboard.</p>
-      <p>More recently, I have been building AI-assisted products and experimenting with agent-driven systems, with a focus on making AI genuinely useful in real-world environments.</p>
-      <p>IM x AI reflects how I work now: human judgment, direction, and taste, strengthened by serious collaboration with AI during research, prototyping, implementation, and iteration.</p>
-      <p>I am most interested in work that sits close to infrastructure, users, and operational reality: the layer where product thinking, technical depth, and practical automation meet.</p>
+<!-- APPROACH -->
+<section id="approach" class="section container">
+  <div class="approach-grid">
+    <div class="approach-left reveal">
+      <p class="kicker">How I work</p>
+      <h2>Grounded in systems.<br>Built to ship.</h2>
+      <div class="approach-copy">
+        <p>My background is in SAP Business One, business systems, and data workflows. I spent years turning operational needs into working solutions. That taught me to think in systems, not features: how processes break, where teams get blocked, and what software has to do once it leaves the whiteboard.</p>
+        <p>Now I build agentic AI systems that live in that same operational reality, where product thinking, technical depth, and practical automation meet.</p>
+        <p class="approach-credit">{{ site.Params.collaborationCredit }}</p>
+      </div>
     </div>
-    <div class="timeline-group">
-      <div class="timeline-section">
-        <p class="section-kicker">Experience</p>
-        <div class="timeline-list">
-          <div class="timeline-item">
-            <div class="timeline-main">
-              <h3>Milner Browne</h3>
-              <p>SAP Business One Consultant</p>
-              <p class="timeline-impact">Delivering SAP Business One implementations, reporting systems, and data workflow solutions across ERP, MongoDB, and analytics environments</p>
-            </div>
-            <span class="timeline-date">2018 - Now</span>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-main">
-              <h3>Groupon</h3>
-              <p>Customer Support Representative</p>
-              <p class="timeline-impact">Built a strong foundation in troubleshooting, communication, and customer-facing problem solving in a high volume support environment</p>
-            </div>
-            <span class="timeline-date">2014 - 2016</span>
-          </div>
-        </div>
+    <div class="approach-right reveal">
+      <div class="principle">
+        <span class="principle-n">01</span>
+        <h3>Policy before autonomy</h3>
+        <p>AI proposes; deterministic code and human approval own the decisions that matter.</p>
       </div>
-      <div class="timeline-section">
-        <p class="section-kicker">Hackathons</p>
-        <div class="timeline-list">
-          <div class="timeline-item">
-            <div class="timeline-main">
-              <h3>Notion MCP Hackathon</h3>
-              <p class="timeline-impact">Participated in the Notion MCP Challenge by shaping and testing THAWNE's bidirectional Notion interface, enabling human review and structural intelligence flow for an autonomous blockchain agent</p>
-            </div>
-            <span class="timeline-date">2026</span>
-          </div>
-        </div>
+      <div class="principle">
+        <span class="principle-n">02</span>
+        <h3>Ship into reality</h3>
+        <p>Real integrations, real users, real constraints. Auditability and control over cleverness.</p>
       </div>
-      <div class="timeline-section">
-        <p class="section-kicker">Certification</p>
-        <div class="timeline-list">
-          <div class="timeline-item">
-            <div class="timeline-main">
-              <h3>SAP Certified Application Associate</h3>
-            </div>
-            <span class="timeline-date">2025</span>
-          </div>
-        </div>
+      <div class="principle">
+        <span class="principle-n">03</span>
+        <h3>Value lives in the handoffs</h3>
+        <p>Between email and ERP, recommendation and execution, automation and human judgment.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="contact" class="section contact-section">
-  <div class="contact-block section-narrow">
-    <div class="section-head">
-      <h2>Open to the right conversation.</h2>
+<!-- CAPABILITIES MARQUEE -->
+<section class="marquee-wrap" aria-label="Capabilities">
+  <div class="marquee">
+    <div class="marquee-track">
+      {{ $caps := slice "Agent Infrastructure" "MCP Servers" "AI Operations Systems" "RAG + Knowledge Systems" "SAP · ERP Automation" "LLM Integration" "Workflow Apps" }}
+      {{ range seq 2 }}{{ range $caps }}<span>{{ . }}</span><span class="sep">/</span>{{ end }}{{ end }}
     </div>
-    <p>If you are hiring for AI systems, agent tooling, or technical product roles, I would be glad to connect.</p>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="section container">
+  <div class="section-head reveal">
+    <p class="kicker">Experience</p>
+    <h2>The path here.</h2>
+  </div>
+  <div class="exp-list reveal">
+    <div class="exp-item">
+      <div class="exp-body">
+        <h3>Enterpryze</h3>
+        <p class="exp-role">Agentic AI Engineer</p>
+        <p class="exp-note">Building production AI systems and agent tooling for ERP and operational workflows, including MCP servers, support automation, and applied LLM integration.</p>
+      </div>
+      <span class="exp-date">May 2026 — Now</span>
+    </div>
+    <div class="exp-item">
+      <div class="exp-body">
+        <h3>Milner Browne</h3>
+        <p class="exp-role">SAP Business One Consultant</p>
+        <p class="exp-note">SAP B1 implementations, reporting systems, and data workflow solutions across ERP, MongoDB, and analytics environments.</p>
+      </div>
+      <span class="exp-date">2018 — 2026</span>
+    </div>
+    <div class="exp-item">
+      <div class="exp-body">
+        <h3>Groupon</h3>
+        <p class="exp-role">Customer Support Representative</p>
+        <p class="exp-note">Foundations in troubleshooting, communication, and customer-facing problem solving in a high-volume support environment.</p>
+      </div>
+      <span class="exp-date">2014 — 2016</span>
+    </div>
+    <div class="exp-item exp-item-cert">
+      <div class="exp-body">
+        <h3>SAP Certified Application Associate</h3>
+        <p class="exp-role">Certification</p>
+      </div>
+      <span class="exp-date">2025</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section container">
+  <div class="contact-panel reveal">
+    <div class="contact-glow" aria-hidden="true"></div>
+    <p class="kicker">Contact</p>
+    <h2>Open to the right conversation.</h2>
+    <p class="contact-lede">If you are hiring for agentic AI, AI systems, or technical product roles, I would be glad to connect.</p>
     <div class="contact-links">
-      <a href="mailto:{{ site.Params.email }}">Email</a>
-      <a href="{{ site.Params.github }}" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="{{ site.Params.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a class="btn btn-primary" href="mailto:{{ site.Params.email }}">Email me <span class="btn-arrow">→</span></a>
+      <a class="btn btn-ghost" href="{{ site.Params.github }}" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn btn-ghost" href="{{ site.Params.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
     </div>
   </div>
 </section>

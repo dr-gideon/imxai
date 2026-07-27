@@ -3,33 +3,70 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ if .IsHome }}{{ site.Title }} | {{ site.Params.role }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
+
+  {{- $title := cond .IsHome (printf "%s · %s" site.Params.name site.Params.role) (printf "%s · %s" .Title site.Params.name) -}}
+  {{- $desc := site.Params.tagline -}}
+  <title>{{ $title }}</title>
+  <meta name="description" content="{{ $desc }}">
+  <link rel="canonical" href="{{ .Permalink }}">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ $title }}">
+  <meta property="og:description" content="{{ $desc }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:site_name" content="{{ site.Params.brand }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ $title }}">
+  <meta name="twitter:description" content="{{ $desc }}">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Serif+Display:ital@0;1&family=Fraunces:opsz,wght,SOFT@9..144,400..700,0..100&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/project-page-v2.css?v=20260524-bart-preview">
+  <link rel="stylesheet" href="/css/site.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "{{ site.Params.name }}",
+    "jobTitle": "{{ site.Params.role }}",
+    "worksFor": { "@type": "Organization", "name": "{{ site.Params.company }}" },
+    "address": { "@type": "PostalAddress", "addressLocality": "{{ site.Params.location }}" },
+    "email": "mailto:{{ site.Params.email }}",
+    "url": "{{ site.BaseURL }}",
+    "sameAs": ["{{ site.Params.github }}", "{{ site.Params.linkedin }}"]
+  }
+  </script>
 </head>
 <body>
-  <header class="site-header{{ if .IsHome }} home-header{{ else if .IsPage }} home-header{{ end }}">
-    <a href="/" class="site-brand">{{ site.Params.brand }}</a>
-    <nav class="site-nav">
-      {{ if .IsHome }}
-        {{ range site.Menus.main }}
-        <a href="{{ .URL }}">{{ .Name }}</a>
-        {{ end }}
-      {{ else }}
-        <a href="/">Back Home</a>
-      {{ end }}
-    </nav>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="brand" href="/" aria-label="{{ site.Params.brand }} home"><span class="brand-mark">IM<span class="brand-x">×</span>AI</span></a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/#work">Work</a>
+        <a href="/#approach">Approach</a>
+        <a href="/#experience">Experience</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <a class="btn btn-ghost nav-cta" href="/#contact"><span class="status-dot"></span> Open to roles</a>
+    </div>
   </header>
-  <main{{ if .IsHome }} class="home-main"{{ else if .IsPage }} class="project-main"{{ end }}>
+
+  <main id="top">
     {{ block "main" . }}{{ end }}
   </main>
-  <footer class="site-footer">
-    <p>{{ site.Params.collaborationCredit }}</p>
+
+  <footer class="footer container">
+    <span class="footer-brand">IM<span class="brand-x">×</span>AI</span>
+    <span>© {{ now.Year }} {{ site.Params.name }} · {{ site.Params.location }}</span>
+    <span class="footer-credit">{{ site.Params.collaborationCredit }}</span>
   </footer>
-  <script src="/marquee.js"></script>
+
+  <script src="/js/app.js"></script>
 </body>
 </html>

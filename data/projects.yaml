@@ -1,120 +1,45 @@
 projects:
-  - slug: nora
-    name: NORA
-    status: PRODUCTION STAGING
-    summary: AI-assisted support operations system for Outlook-to-ERP logging, AWS-routed email understanding, My Calls, Team Chat, Knowledge Library, admin settings, and controlled execution.
-    impact: Production-intended staging covers AWS-only LLM routing with privacy gate, Postgres-backed state, Work Queue, My Calls, Team Chat, Knowledge Library/Candidates, consultant mappings, access control, and full system controls.
+  - name: RESOLVE
+    former: formerly NORA
+    status: Live in production
+    cls: live
+    summary: AI support-operations system that reads incoming email, decides the right service-desk action, and executes it after human approval. Live and used daily by internal support teams.
     stack:
-      - Outlook
-      - ERP API
+      - Node.js
+      - AWS LLM
       - Postgres
-      - LLM Advisory
-      - Portal UI
-    body: |
-      NORA is an internal support workflow copilot designed to automate repeatable service-call logging and email-routing work for a small support team. It classifies whether an email should create a service call, update an existing one, trigger a reassignment, move to manual review, or require no action.
+      - Microsoft Graph
+      - ERP API
 
-      The system now includes a production-intended operator/admin portal direction: shared Work Queue and Knowledge surfaces, My Calls, ephemeral Team Chat, role-specific Home and Settings, access management, consultant mappings, Knowledge Library/Candidates, and high-sensitivity system controls around live execution, mailbox intake, AWS LLM routing, privacy gates, and office hours.
-  - slug: bart
-    name: BART
-    status: PRIVATE DEMO READY
-    summary: Hosted marketing lead intake automation for Enterpryze workflows, turning the clean new-prospect handoff from a 15-20 minute manual delay into an around-five-second Teams alert.
-    impact: Private hosted demo has proven new-prospect and existing-BP review paths across Enterpryze lead creation, Jotform UDF writeback, Teams cards, SQLite audit state, and mock-safe default runtime.
-    stack:
-      - Enterpryze API
-      - Jotform
-      - Teams Bot
-      - SQLite
-      - TypeScript
-    body: |
-      BART is a marketing lead intake automation that turns submitted web enquiries into controlled Enterpryze sales workflow records. It matches submitted companies and contacts against Business Partner data, creates new prospects when appropriate, pauses for review when an existing customer is missing the submitted contact, and resumes only after the selected account has been re-synced.
-
-      The current hosted demo is private and mock-safe by default, but the live path has been proven through controlled tests: Enterpryze lead/prospect writes, Jotform submission creation, lead UDF update, proactive Teams cards, manual-review resume, and admin read endpoints. For a clean new-prospect enquiry, BART compresses the salesperson handoff from the usual 15-20 minute manual delay to about five seconds.
-  - slug: poc-app
-    name: POC App
-    status: LIVE PRIVATE PILOT
-    summary: Warehouse proof-of-collection app for SAP Business One supplier returns, with digital courier signatures, signed PDF generation, and SAP UDF writeback.
-    impact: Private trusted-network service live against SAP demo data with PIN auth, SQL Server persistence, Service Layer lookup/writeback, one-page proof PDFs, and operational status checks.
+  - name: POC App
+    status: In customer testing
+    cls: staging
+    summary: Warehouse proof-of-collection app for SAP Business One supplier returns, with digital courier signatures, signed PDFs, and SAP writeback. MVP accepted by a customer, now in active development.
     stack:
       - SAP B1 Service Layer
-      - SQL Server
       - TypeScript
       - Fastify
+      - SQL Server
       - PDFKit
-    body: |
-      POC App is a focused warehouse tool for supplier returns. A warehouse user looks up an A/P Credit Note, captures the courier signature on a warehouse device, generates a proof-of-collection PDF, and writes the proof link back to SAP.
+    link: "https://www.youtube.com/watch?v=5NwqrQfRhWA"
+    linkLabel: Watch demo
 
-      It is deliberately narrow: private access, shared warehouse PIN, SAP-backed lookup, local proof storage, and a clean proof reference visible from the SAP document.
-  - slug: argus
-    name: ARGUS
-    status: FINAL BUILD STAGE
-    summary: RAG-based support assistant for business systems knowledge, built to learn retrieval pipelines and grounded AI responses.
-    impact: Working retrieval and answer-generation pipeline with curated knowledge and citation-based responses.
+  - name: Enterpryze MCP
+    status: Public demo
+    cls: demo
+    summary: Hosted MCP server that lets AI clients work with Enterpryze sales-order data safely, with read and analysis tools, a guarded create flow, and bearer-protected access.
+    stack:
+      - MCP
+      - TypeScript
+      - Fastify
+      - Cloudflare Tunnel
+
+  - name: ARGUS
+    status: In build
+    cls: planned
+    summary: RAG-based support assistant for business-systems knowledge, with grounded retrieval and citation-backed answers over curated documents.
     stack:
       - Python
       - FastAPI
       - Postgres
       - pgvector
-      - RAG
-    body: |
-      ARGUS is a retrieval-augmented support assistant designed around real-world troubleshooting and knowledge retrieval. The project focuses on building a grounded support workflow using curated documents, vector search, and answer generation tied closely to retrieved evidence.
-
-      It is also part of a broader effort to deepen practical experience in retrieval pipelines, vector databases, and AI systems that need to be trustworthy in operational environments.
-  - slug: grodd
-    name: GRODD
-    status: PLANNING / LOCAL PILOT
-    summary: Installable Peppol submission product for SAP Business One invoices and credit notes, built around a canonical document model.
-    impact: Working local backend and dashboard with SAP B1 SQL Server connector, invoice discovery, canonical mapping, validation, and persisted processing runs.
-    stack:
-      - SAP B1 SQL
-      - Peppol
-      - Canonical Model
-      - Local Dashboard
-      - SQLite
-    body: |
-      GRODD is an installable Peppol submission product designed to sit between source systems and an access point partner. The first connector targets SAP Business One on SQL Server, with Belgium as the initial market context.
-
-      The system keeps customer source data in the source system, maps invoices and credit notes into a canonical model, validates them, and gives operators a local dashboard for document visibility, failure diagnostics, resubmission, and audit trail.
-  - slug: enterpryze-mcp
-    name: Enterpryze MCP
-    status: PUBLIC DEMO READY
-    summary: Hosted MCP server for Enterpryze sales-order workflows, with read tools, analysis tools, guarded create flow, public setup docs, and bearer-protected access.
-    impact: Public company-demo endpoint live behind Cloudflare Tunnel with rate limiting, setup page, 10 MCP tools, server-side Enterpryze auth, preview-first create guardrails, VAT allowlist, and audit logging.
-    stack:
-      - MCP
-      - TypeScript
-      - Fastify
-      - Enterpryze API
-      - Cloudflare Tunnel
-    body: |
-      Enterpryze MCP is a hosted MCP server that lets Claude, Codex, and other clients work with Enterpryze sales-order data without exposing Enterpryze credentials to the user machine.
-
-      It provides read, analysis, and guarded write tools for a test Enterpryze organisation. The public demo uses bearer authentication, rate limiting, explicit create confirmation, validation guardrails, VAT-code allowlisting, and append-only audit logging.
-  - slug: thawne
-    name: THAWNE
-    status: PHASE 4 PLANNED
-    summary: Autonomous ecosystem intelligence agent tracking developments, services, and signals across the Tempo ecosystem.
-    impact: Live public-facing system with structured knowledge, monitoring workflows, and early autonomy controls.
-    stack:
-      - MCP
-      - REST
-      - Automation
-      - Knowledge Graph
-      - Tempo
-    body: |
-      THAWNE is an ecosystem intelligence agent built to monitor the Tempo ecosystem and turn raw developments into structured, queryable knowledge. It combines ongoing research, data ingestion, and service monitoring with agent-oriented interfaces.
-
-      The project is moving toward higher autonomy in a controlled way, with explicit spending guardrails and a clear operational policy.
-  - slug: dibny
-    name: DIBNY
-    status: LIVE
-    summary: Collaborative art game where AI agents pay to draw on a shared canvas.
-    impact: Live concept with agent-native payments and multiplayer creative interaction.
-    stack:
-      - MCP
-      - MPP
-      - x402
-      - Tempo
-    body: |
-      DIBNY is an agent collaborative art game built around the idea that software agents can participate in creative systems, not just automate tasks. Agents pay to draw random lines on an 8x8 dot grid, with the canvas evolving into a final piece through controlled randomness.
-
-      The project explores agent-native payments, game mechanics, and AI participation in public digital experiences.
