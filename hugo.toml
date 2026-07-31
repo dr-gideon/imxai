@@ -1,51 +1,25 @@
-baseURL = "http://100.86.180.12:1314/"
-languageCode = "en-us"
+baseURL = "https://imxai.xyz/"
+locale = "en-us"
 title = "IM x AI"
-disableKinds = ["taxonomy", "term", "RSS", "sitemap"]
+disableKinds = ["taxonomy", "term", "RSS"]
 
 [params]
   name = "Iyyappan Mani"
   brand = "IM x AI"
-  role = "AI Systems Engineer"
-  tagline = "A systems-minded builder building with AI through real products, agent tooling, and applied automation."
-  collaborationCredit = "Built with AI as a real collaborator, not a ghostwriter."
-  intro = "My background is in SAP Business One, business systems, reporting, and data workflows, where I spent years turning operational needs into working solutions for users and stakeholders. More recently, I have been building AI-assisted products and experimenting with agent-driven systems, with a focus on making AI genuinely useful in real-world environments."
-  roles = ["AI Systems Engineer", "AI Agentic Engineer", "Product Support Engineer"]
+  role = "Agentic AI Engineer"
+  company = "Enterpryze"
+  tagline = "Agentic AI engineer building production AI systems for real operational work, grounded in ERP, support, and automation."
+  collaborationCredit = "Human judgment, direction and taste, strengthened by AI."
   location = "Dublin, Ireland"
-  availability = "Available to work"
+  availability = "Available for new roles"
   email = "iyyappanm.2912@gmail.com"
   github = "https://github.com/dr-gideon"
   linkedin = "https://www.linkedin.com/in/iyyappan-mani-systems-engineer/"
 
 [outputs]
   home = ["HTML"]
-  section = ["HTML"]
-  page = ["HTML"]
-
-[permalinks]
-  projects = "/projects/:slug/"
 
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
-
-[[menu.main]]
-  name = "Projects"
-  url = "/#projects"
-  weight = 10
-
-[[menu.main]]
-  name = "Experiments"
-  url = "/experiments/"
-  weight = 20
-
-[[menu.main]]
-  name = "About"
-  url = "/#about"
-  weight = 30
-
-[[menu.main]]
-  name = "Contact"
-  url = "/#contact"
-  weight = 40
