@@ -34,12 +34,16 @@ projects:
       - Fastify
       - Cloudflare Tunnel
 
-  - name: ARGUS
-    status: In build
-    cls: planned
-    summary: RAG-based support assistant for business-systems knowledge, with grounded retrieval and citation-backed answers over curated documents.
+  - name: World Cup Sweepstake
+    status: Shipped to real users
+    cls: live
+    summary: Office sweepstake app for the 2026 FIFA World Cup. 33 colleagues registered with their work email, drew a team through an AI-scripted dramatic reveal, and watched every draw land on a shared live reveal board.
     stack:
-      - Python
-      - FastAPI
-      - Postgres
-      - pgvector
+      - React
+      - Vite
+      - Express
+      - SQLite
+      - LLM
+      - football-data.org API
+    link: "https://github.com/dr-gideon/world-cup-sweepstake"
+    linkLabel: View code

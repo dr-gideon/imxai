@@ -1,9 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-  <rect width="64" height="64" rx="14" fill="#050505"/>
-  <path d="M18 17.5V46.5" stroke="#F5F5F2" stroke-width="4.2" stroke-linecap="round"/>
-  <path d="M28 17.5L28 46.5" stroke="#F5F5F2" stroke-width="4.2" stroke-linecap="round"/>
-  <path d="M18 17.5L28 30.5" stroke="#F5F5F2" stroke-width="4.2" stroke-linecap="round"/>
-  <path d="M18 46.5L28 33.5" stroke="#F5F5F2" stroke-width="4.2" stroke-linecap="round"/>
-  <path d="M39 20L49 44" stroke="#F5F5F2" stroke-width="4.2" stroke-linecap="round"/>
-  <path d="M49 20L39 44" stroke="#F5F5F2" stroke-width="4.2" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="IM x AI">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8b7bff"/>
+      <stop offset="1" stop-color="#5b4be8"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="15" fill="url(#g)"/>
+  <g stroke="#ffffff" stroke-width="9" stroke-linecap="round">
+    <path d="M21 21 L43 43"/>
+    <path d="M43 21 L21 43"/>
+  </g>
 </svg>
