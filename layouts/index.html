@@ -60,7 +60,7 @@
     <p class="section-note">A focused cut of production and customer-facing work. Details are kept high level by design. Happy to walk through the depth in conversation.</p>
   </div>
   <div class="project-grid">
-    {{ range $i, $p := hugo.Data.projects.projects }}
+    {{ range $i, $p := site.Data.projects.projects }}
     <article class="project-card reveal" style="transition-delay:{{ mul (mod $i 2) 80 }}ms">
       <div class="pc-top">
         <span class="pc-name-wrap">

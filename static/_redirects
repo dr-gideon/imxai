@@ -1,2 +1,6 @@
-/projects/culld/ /experiments/ 302
-/projects/culld /experiments/ 302
+# Old project and experiment URLs now live on the single-page site.
+/projects/culld/ / 301
+/projects/culld / 301
+/projects/* / 301
+/experiments/ / 301
+/experiments / 301
