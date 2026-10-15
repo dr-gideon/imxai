@@ -1260,3 +1260,12 @@
 - Deployment scope: publish the POC App production-status wording, the reusable centered screenshot modal, three POC App screenshots, four World Cup Sweepstake screenshots, modal scrolling, accessible descriptions, captions, keyboard controls, and responsive styling.
 - Keep each project's existing external action (`Watch demo` or `View code`) separate and functional.
 - Exclude all pre-existing scratch files, backups, generated previews, and temporary paths from the commit.
+
+## 2026-10-15 — Project screenshot galleries deployed
+
+- Committed and pushed the approved portfolio changes to `main`.
+- Feature commit: `dc0bd40` (`Add project screenshot galleries`).
+- Production deployment verified at `https://imxai.xyz/` after the initial Cloudflare build delay.
+- Confirmed live POC App production wording and screenshot galleries for POC App and World Cup Sweepstake.
+- Confirmed the deployed JavaScript includes slide scroll reset and all four World Cup Sweepstake images return HTTP 200 at their production URLs.
+- Pre-existing local backups, scratch files, generated previews, and temporary paths remained untracked and were not pushed.
