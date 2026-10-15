@@ -44,7 +44,7 @@
   </div>
   <div class="impact-item reveal">
     <span class="impact-key">Customer adopted</span>
-    <span class="impact-val">POC App MVP accepted by a customer, now in testing</span>
+    <span class="impact-val">POC App is live in production after customer acceptance</span>
   </div>
   <div class="impact-item reveal">
     <span class="impact-key">8+ systems</span>
@@ -61,7 +61,7 @@
   </div>
   <div class="project-grid">
     {{ range $i, $p := site.Data.projects.projects }}
-    <article class="project-card reveal" style="transition-delay:{{ mul (mod $i 2) 80 }}ms">
+    <article class="project-card{{ with $p.screenshots }} project-card-gallery{{ end }} reveal" style="transition-delay:{{ mul (mod $i 2) 80 }}ms">
       <div class="pc-top">
         <span class="pc-name-wrap">
           <span class="pc-name">{{ $p.name }}</span>
@@ -76,10 +76,40 @@
         </div>
         {{ with $p.link }}<a class="pc-link" href="{{ . }}" target="_blank" rel="noopener">{{ $p.linkLabel | default "View" }} →</a>{{ end }}
       </div>
+      {{ with $p.screenshots }}
+      <button class="pc-gallery-trigger" type="button" data-gallery="project-gallery-{{ $i }}" aria-haspopup="dialog" aria-label="View {{ $p.name }} screenshots"></button>
+      <template id="project-gallery-{{ $i }}" data-project-name="{{ $p.name }}">
+        {{ range . }}
+        <figure class="gallery-slide">
+          <img src="{{ .src }}" alt="{{ .alt }}">
+          <figcaption>{{ .caption }}</figcaption>
+        </figure>
+        {{ end }}
+      </template>
+      {{ end }}
     </article>
     {{ end }}
   </div>
 </section>
+
+<div class="gallery-modal" id="project-gallery-modal" hidden>
+  <div class="gallery-modal-backdrop" data-gallery-close></div>
+  <section class="gallery-dialog" role="dialog" aria-modal="true" aria-labelledby="gallery-modal-title">
+    <header class="gallery-header">
+      <div>
+        <p class="kicker">Project screenshots</p>
+        <h2 id="gallery-modal-title"></h2>
+      </div>
+      <button class="gallery-close" type="button" data-gallery-close aria-label="Close screenshot gallery">×</button>
+    </header>
+    <div class="gallery-stage">
+      <button class="gallery-nav gallery-prev" type="button" aria-label="Previous screenshot">←</button>
+      <div class="gallery-slides"></div>
+      <button class="gallery-nav gallery-next" type="button" aria-label="Next screenshot">→</button>
+    </div>
+    <p class="gallery-counter" aria-live="polite"></p>
+  </section>
+</div>
 
 <!-- APPROACH -->
 <section id="approach" class="section container">

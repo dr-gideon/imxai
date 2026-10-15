@@ -1220,3 +1220,43 @@
   - `static/argus-flow-*.html`
   - `static/culld-flow-*.html`
   - `tmp/`
+
+## 2026-10-15 — POC App production-status preview
+
+- Updated the POC App project-card status from `In customer testing` to `Live in production`.
+- Switched the card status class from `staging` to `live` so it uses the production styling.
+- Updated the homepage impact line and POC App summary to say it is live in production after customer acceptance, removing the outdated testing/development wording.
+- Verified the change at `http://100.86.180.12:1314/` with HTTP 200.
+- Replaced the expiring ad-hoc preview process with transient user service `imxai-preview.service` so the Tailscale preview persists between messages.
+- Preview only; no commit, push, or live deployment performed.
+
+## 2026-10-15 — POC App screenshot-modal preview
+
+- Added the three existing POC App screenshots to project data with accessible descriptions and captions.
+- Made only the POC App tile open a centered screenshot modal with previous/next controls, counter, backdrop close, Escape close, arrow-key navigation, body scroll locking, and focus return.
+- Kept the existing `Watch demo` YouTube link separate and functional.
+- Added responsive modal styling for desktop and mobile.
+- Backed up `static/js/app.js` before editing and retained the backup under the untracked `backups/` directory.
+- Verification passed: Hugo production build, JavaScript syntax check, diff check, HTTP 200 over Tailscale, and a disposable Chromium interaction test covering open, advance, close, focus return, and demo-link preservation.
+- Preview only; no commit, push, or live deployment performed.
+
+## 2026-10-15 — Screenshot-modal scrolling
+
+- Made the screenshot viewport vertically scrollable so the full POC App proof PDF can be viewed inside the modal.
+- Reset the viewport to the top whenever the user changes slides.
+- Verification passed: Hugo production build, JavaScript syntax check, HTTP 200 over Tailscale, and Chromium confirmed slide 3 scrolls through its full overflow.
+- Preview only; no commit, push, or live deployment performed.
+
+## 2026-10-15 — World Cup Sweepstake screenshot-modal preview
+
+- Added four supplied World Cup Sweepstake screenshots with URL-safe filenames: entry screen, draw reveal, and results-board views for pots 1–2 and 3–4.
+- Added accessible descriptions and captions so the World Cup Sweepstake tile uses the existing screenshot modal.
+- Source images remain in `/home/giddy/temp/sweep/`; site copies live under `static/images/world-cup-sweepstake/`.
+- Preview only; no commit, push, or live deployment performed.
+
+## 2026-10-15 — Portfolio status and screenshot galleries approved for deployment
+
+- Dr. Wells approved the preview and gave the magic phrase: `run barry run`.
+- Deployment scope: publish the POC App production-status wording, the reusable centered screenshot modal, three POC App screenshots, four World Cup Sweepstake screenshots, modal scrolling, accessible descriptions, captions, keyboard controls, and responsive styling.
+- Keep each project's existing external action (`Watch demo` or `View code`) separate and functional.
+- Exclude all pre-existing scratch files, backups, generated previews, and temporary paths from the commit.
